@@ -6,13 +6,20 @@
     <title>중랑구거주자우선주차</title>
     <link rel="stylesheet" href="style/defalut.css">
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+    <div class="moblie-nav-bg"></div>
     <header>
         <div class="wrap">
             <div class="header-top">
                 <h1><a href="index.html"><div class="hide">중랑구거주자우선주차</div></a></h1>
-                <ul class="util">유틸영역</ul>
+                <ul class="util">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="#none">로그인</a></li>
+                    <li><a href="#none">회원가입</a></li>
+                    <li><a href="#none">오시는길</a></li>
+                </ul>
                 <button id="menuBtn">
                     <div class="hide">메뉴열기</div>
                 </button>
@@ -80,105 +87,199 @@
                     </li>   
                 </ul>
             </nav>
-    </div>
+        </div>
+        <span class="nav-line"></span>
+        <span class="nav-bg"></span>
     </header>
-    <section class="slider">슬라이드</section>
+    <section class="slider">
+        <ul class="slider-list">
+            <li>슬라이드1</li>
+            <li>슬라이드2</li>
+            <li>슬라이드3</li>
+        </ul>
+        <ul class="slider-btn">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <button class="stop"></button>
+        </ul>
+    </section>
     <section class="quick">
         <div class="wrap">
             <h2>자주 찾는 서비스</h2>
-            <ul class="quick-menu">
-                <li>
-                    <a href="#none">
-                        <div class="inner">
-                            <div class="ico"></div>
-                            거주자우선<br>주차란?
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#none">
-                        <div class="inner">
-                            <div class="ico"></div>
-                            신청 / 배정<br>안내
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#none">
-                        <div class="inner">
-                            <div class="ico"></div>
-                            시간 / 요금<br>안내
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#none">
-                        <div class="inner">
-                            <div class="ico"></div>
-                            주차구간<br>지도검색
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#none">
-                        <div class="inner">
-                            <div class="ico"></div>
-                            각종 서식<br>다운로드
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#none">
-                        <div class="inner">
-                            <div class="ico"></div>
-                            각종 검증<br>서류제출
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#none">
-                        <div class="inner">
-                            <div class="ico"></div>
-                            출력 / 결제<br>에러조치
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#none">
-                        <div class="inner">
-                            <div class="ico"></div>
-                            부정주차<br>체납조회
-                        </div>    
-                    </a>
-                </li>
-            </ul>
+            <div class="quick-inner">
+                <ul class="quick-menu">
+                    <li>
+                        <a href="#none">
+                            <div class="inner">
+                                <div class="ico"></div>
+                                거주자우선<br>주차란?
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="inner">
+                                <div class="ico"></div>
+                                신청 / 배정<br>안내
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="inner">
+                                <div class="ico"></div>
+                                시간 / 요금<br>안내
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="inner">
+                                <div class="ico"></div>
+                                주차구간<br>지도검색
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="inner">
+                                <div class="ico"></div>
+                                각종 서식<br>다운로드
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="inner">
+                                <div class="ico"></div>
+                                각종 검증<br>서류제출
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="inner">
+                                <div class="ico"></div>
+                                출력 / 결제<br>에러조치
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#none">
+                            <div class="inner">
+                                <div class="ico"></div>
+                                부정주차<br>체납조회
+                            </div>    
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
     <section class="content">
         <div class="wrap">
-            <div class="tab">공지 일정</div>
-            <div class="banner">배너</div>
+            <div class="tab">
+                <div class="tab-inner">
+                    <div class="tab-top">
+                        <ul class="tab-header">
+                            <li>일정정보</li>
+                            <li class="active">공지사항</li>
+                        </ul>
+                        <button><span class="hide">더보기</span></button>
+                    </div>
+                    <div class="tab-bottom">
+                        <ul class="calendar">
+                            <li><span>정기분 신청일정</span>2024.02.01(목) ~ 02.07(수) 18:00까지</li>
+                            <li><span>정기분 납부일정</span>2024.03.04(월) ~ 03.20(수)까지</li>
+                            <li><span>수시분 신청일정</span>2024.04.01(월) ~</li>
+                        </ul>
+                        <ul class="notice active">
+                            <li><a href="#none"><p>12/1 중랑구시설관리공단 창립기념일 휴무안내</p><span class="date">2023-11-29</span></a></li>
+                            <li><a href="#none"><p>12/1 중랑구시설관리공단 창립기념일 휴무안내</p><span class="date">2023-11-29</span></a></li>
+                            <li><a href="#none"><p>12/1 중랑구시설관리공단 창립기념일 휴무안내</p><span class="date">2023-11-29</span></a></li>
+                            <li><a href="#none"><p>12/1 중랑구시설관리공단 창립기념일 휴무안내</p><span class="date">2023-11-29</span></a></li>
+                            <li><a href="#none"><p>12/1 중랑구시설관리공단 창립기념일 휴무안내</p><span class="date">2023-11-29</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="banner">
+                <ul class="banner-list">
+                    <li>
+                        <div class="hide">
+                            부정주차 단속시간 변경<br>
+                            기존 오전 7시 부터 익일 1시까지
+                            변경 24시간 운영
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hide">
+                            2024년 2분기 요금납부안내<br>
+                            납부기간 : 2024년2월29일 목요일 부터 3월 20일 수요일까지<br>
+                            납부방법 : 가상계좌 입금 및 카드납부<br>
+                            주의사항 : 기간내에 요금을 납부하지 않으실 경우 배정이 취소되며, 차량이 단속 및 견인조치 될 수 있습니다.
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hide">
+                            주차장 신청 서류 어떤 서류를 준비해야할까?<br>
+                            클릭시 해당 페이지로 이동합니다.
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
     <section class="information">
         <div class="wrap">
-            <div>전화번호1</div>
-            <div>전화번호2</div>
-            <div>전화번호3</div>
+            <div class="info-item">
+                <div class="ico-box"></div>
+                <div class="text-box">
+                    <p>거주자우선주차</p>
+                    <b>1577-1234</b>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="ico-box"></div>
+                <div class="text-box">
+                    <p>공영주차장</p>
+                    <b>1577-5678</b>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="ico-box"></div>
+                <div class="text-box">
+                    <p>견인차량보관소</p>
+                    <b>1577-0123</b>
+                </div>
+            </div>
         </div>
     </section>
     <footer>
         <div class="footer-top">
             <div class="wrap">
-                푸터위
+                <ul>
+                    <li><a href="#none">개인정보처리방침</a></li>
+                    <li><a href="#none">홈페이지 이용약관</a></li>
+                    <li><a href="#none">오시는길</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="wrap">
-                푸터아래
+                <div class="footer-logo">
+                    <div class="hide">중랑구시설관리공단</div>
+                </div>
+                <ul>
+                    <li>서울시 중랑구 겸재로23길 27(면목동)<span>우편번호 : 02140</span></li>
+                    <li>일반팩스 : 02-491-4890<span>모바일팩스 : 0504-422-4888</span></li>
+                    <li>Copyright ⓒ 2024 sound. All Rights Reserved</li>
+                </ul>
             </div>
         </div>
     </footer>
+    <script src="script/script.js"></script>
     
 </body>
 </html>

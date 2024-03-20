@@ -1,5 +1,26 @@
+/*
+gird를 곳곳에 사용해보았다.
+모바일 -> 태블릿 -> pc 순으로 만들었다.
+*/
+
 body {
+    position: relative;
     min-width: 320px;
+}
+
+.moblie-nav-bg {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.moblie-nav-bg.active {
+    display: block;
 }
 
 h2 {
@@ -13,7 +34,7 @@ h2 {
 .wrap {
     width: 100%;
     padding: 0 10px 20px 10px;
-    overflow: hidden;
+   /*  overflow: hidden; */
 }
 
 
@@ -22,8 +43,13 @@ h2 {
 header {
     height: 50px;
     position: relative;
-    background-color: pink;
 }
+
+.nav-line,
+.nav-bg {
+    display: none;
+}
+
 
 .header-top {
     display: flex;
@@ -32,7 +58,7 @@ header {
 
 h1 > a {
     display: block; 
-    width: 130px;
+    width: 180px;
     height: 50px;
     background: url(../images/logo-moblie.png) no-repeat center left;
 
@@ -71,10 +97,12 @@ nav li a {
     background: url(../images/ico_Down.png) no-repeat center right 10px;
 }
 
-.main-menu li.active a {
+.main-menu > li.active > a {
     color: #227C39;
     background: url(../images/ico_Up.png) no-repeat center right 10px;
 }
+
+
 
 .sub-menu li a {
     line-height: 45px;
@@ -93,15 +121,76 @@ nav li a {
 
 /* 슬라이더 */
 .slider {
+    width: 100%;
     height: 450px;
-    background-color: yellow;
+    position: relative;
+    overflow: hidden;
 }
 
+.slider-list {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    background-color: rgb(248, 248, 189);
+}
 
+.slider-list li {
+    width: calc(100% / 3);
+    height: 100%;
+}
+
+.slider-list li:nth-child(odd){
+    background-color: bisque;
+}
+
+.slider-btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slider-btn li {
+    width: 20px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 100px;
+    background-color: #fff;
+}
+
+.slider-btn li:hover {
+    background-color: #E5EAE8;
+}
+
+.slider-btn li.active {
+    width: 40px;
+    background-color: #227C39;
+}
+
+.slider-btn .stop {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: url(../images/btn-stop.png) no-repeat center #fff;
+}
 
 /* 자주 찾는 서비스 */
+.quick-inner {
+    overflow-x: auto;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+}
+
+.quick-inner ::-webkit-scrollbar {
+    display: none;
+}
+
 .quick-menu {
+    position: relative;
     width: 950px;
+    left: 0;
     display: flex;
     flex-flow: nowrap;
 }
@@ -136,7 +225,6 @@ nav li a {
     align-items: center;
     height: 100%;
     text-align: center;
-
 }
 
 .quick-menu li a .ico {
@@ -228,49 +316,293 @@ nav li a {
 
 
 /* 콘텐츠영역 */
-.content {
-    background-color: aquamarine;
-
+.content .tab {
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #ebebeb;
 }
 
 .content .tab {
-    height: 300px;
     margin-bottom: 20px;
-    background-color: #666;
+}
+
+
+.tab-inner {
+    height: 100%;
+}
+
+.tab-top {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.tab-header {
+    margin-left: 10px;
+    font-size: 0;
+}
+
+.tab-header li {
+    display: inline-block;
+    height: 50px;
+    padding: 0 10px;
+    line-height: 50px;
+    font-size: 18px;
+    border-bottom: 2px solid rgba(0, 0, 0 ,0);
+    cursor: pointer;
+}
+
+.tab-header li.active {
+    position: relative;
+    z-index: 20;
+    font-weight: 600;
+    color: #227C39;
+    border-bottom: 2px solid #227C39;
+}
+
+.tab-top button {
+    width: 50px;
+    height: 50px;
+    background: url(../images/ico-more.png) no-repeat center;
+}
+
+.tab-bottom {
+    height: calc(100% - 50px);
+    padding: 10px;
+}
+
+.tab-bottom ul {
+    display: none;
+}
+
+.tab-bottom ul.active {
+    display: block;
+}
+
+.calendar li {
+    display: flex;
+    flex-flow: column;
+    padding: 10px 0;
+}
+
+.calendar li span {
+    width: 100%;
+    padding-left: 10px;
+    position: relative;
+    font-weight: 600;
+}
+
+.calendar li span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #227C39;   
+}
+
+
+
+.notice li a {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 10px 0 10px 10px;
+    position: relative;
+}
+
+
+.notice li a::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin-right: 10px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #227C39;   
+}
+
+.notice li a:hover {
+    background-color: #E5EAE8;
+}
+
+.notice li a p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notice li a span {
+    min-width: 100px;
 }
 
 .content .banner {
-    height: 300px;
-    background-color: #666;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid #ebebeb;
+    overflow: hidden;
 }
 
+.banner-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100%, 1fr));
+    column-gap: 20px;
+}
+
+
+.banner-list li {
+   width: 100%;
+   height: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+.banner-list li::before{
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.banner-list li:nth-child(1) {
+    background-image: url(../images/banner/320_banner01.png);
+}
+
+.banner-list li:nth-child(2) {
+    background-image: url(../images/banner/320_banner02.png);
+}
+
+.banner-list li:nth-child(3) {
+    background-image: url(../images/banner/320_banner03.png);
+}
 
 
 /* 전화번호안내 */
-.information {
-    background-color: palegoldenrod;
-}
-
-.information > div > div {
+.info-item {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     height: 288px;
     margin-bottom: 20px;
-    background-color: #666;
+    border: 1px solid #ebebeb;
+    border-radius: 20px;
 }
 
-.information > div > div:last-child {
+.info-item:last-child {
     margin-bottom: 0;
+}
+
+.info-item .ico-box {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    border-radius: 100px;
+}
+
+.info-item:nth-child(1) .ico-box {
+    background: url(../images/ico-info01.png) no-repeat center #227C39;
+} 
+
+.info-item:nth-child(2) .ico-box {
+    background: url(../images/ico-info02.png) no-repeat center #227C39;
+} 
+
+.info-item:nth-child(3) .ico-box {
+    background: url(../images/ico-info03.png) no-repeat center #227C39;
+} 
+
+.info-item .text-box {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.info-item .text-box b {
+    text-align: center;
+    font-weight: 700;
+    font-size: 28px;
+    color: #227C39;
 }
 
 
 
 /* 푸터 */
-footer {
-    background-color: palevioletred;
+.footer-top {
+    background-color: #227C39;
+    color: #fff;
+    font-weight: 600;
+}
+
+.footer-top .wrap {
+    padding-bottom: 0;
+}
+
+
+.footer-top ul {
+    display: flex;
+}
+
+.footer-top ul li a {
+    display: block;
+    padding: 0 10px;
+    line-height: 50px;
+}
+
+.footer-top ul li:first-child a {
+    padding-left: 0;
+}
+
+.footer-top ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    display: none;
+}
+
+.footer-bottom ul li {
+    padding: 5px 0;
+}
+
+.footer-bottom ul li span {
+    padding-left: 10px;
+}
+
+@media all and (min-width: 430px) {
+    .banner-list li::before{
+        padding-bottom: 65%;
+    }
+    
+    .banner-list li:nth-child(1) {
+        background-image: url(../images/banner/1280_banner01.png);
+    }
+    
+    .banner-list li:nth-child(2) {
+        background-image: url(../images/banner/1280_banner02.png);
+    }
+    
+    .banner-list li:nth-child(3) {
+        background-image: url(../images/banner/1280_banner03.png);
+    }
 }
 
 @media all and (min-width: 768px){
     body {
         min-width: 320px;
+    }
+
+    .moblie-nav-bg {
+        top: 100px;
     }
     
     h2 {
@@ -293,7 +625,6 @@ footer {
         display: flex;
         align-items: center;
         height: 100px;
-        background-color: pink;
     }
 
     header .wrap {
@@ -339,11 +670,11 @@ footer {
         row-gap: 20px;
     }
 
+
     .quick-menu li {
         position: relative;
         width: 100%;
         height: 100%;
-        background-color: skyblue;
     }
       
     /* 정사각형 비율을 유지하기 */
@@ -382,6 +713,52 @@ footer {
     
     
 
+    /* 콘텐츠 영역 */
+    .tab-bottom {
+        padding: 10px 20px;
+    }
+
+    .calendar li {
+        flex-flow: row nowrap;
+        justify-items: flex-start;
+        align-items: center;
+    }
+    
+    .calendar li span {
+        width: auto;
+        padding: 0 10px;
+    }
+    
+    .content .banner {
+        border: none;
+    }
+
+    .banner-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(calc((100% - 20px)/2), 1fr));
+        column-gap: 20px;
+    }
+
+    .banner-list li {
+        border-radius: 20px;
+        border: 1px solid #ebebeb;
+    }
+
+    .banner-list li::before{
+        padding-bottom: 88%;
+    }
+    
+    .banner-list li:nth-child(1) {
+        background-image: url(../images/banner/768_banner01.png);
+    }
+    
+    .banner-list li:nth-child(2) {
+        background-image: url(../images/banner/768_banner02.png);
+    }
+    
+    .banner-list li:nth-child(3) {
+        background-image: url(../images/banner/768_banner03.png);
+    }
     
     
 
@@ -396,7 +773,6 @@ footer {
     .information > div > div {
         height: 288px;
         margin-bottom: 20px;
-        background-color: #666;
     }
     
     .information > div > div:last-child {
@@ -406,8 +782,24 @@ footer {
     
     
     /* 푸터 */
-    footer {
-        background-color: palevioletred;
+    .footer-bottom .wrap {
+        display: flex;
+        justify-items: flex-start;
+        align-items: center;
+    }
+    .footer-logo {
+        display: block;
+        width: 300px;
+        height: 50px;
+        background: url(../images/logo-footer.png) no-repeat center left;
+    }
+    
+    .footer-bottom ul li {
+        padding: 5px 0;
+    }
+    
+    .footer-bottom ul li span {
+        padding-left: 10px;
     }
 
     @media all and (min-width: 1024px){
@@ -429,10 +821,6 @@ footer {
             row-gap: none;
         }
         
-        .quick ul li {
-            height: 109px;
-        }     
-        
         
         /* 콘텐츠영역 */
         .content .wrap {
@@ -442,28 +830,69 @@ footer {
         }
         
         .content .tab {
-            height: 320px;
-            margin-bottom: 20px;
+            height: 100%;
+            margin-bottom: 0;
+        }
+
+        .banner-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(100% , 1fr));
+            column-gap: 20px;
+        }
+
+        .banner-list li:nth-child(1) {
+            background-image: url(../images/banner/1024_banner01.png);
         }
         
-        .content .banner {
-            height: 320px;
+        .banner-list li:nth-child(2) {
+            background-image: url(../images/banner/1024_banner02.png);
         }
-     
+        
+        .banner-list li:nth-child(3) {
+            background-image: url(../images/banner/1024_banner03.png);
+        }
     }
 
     @media all and (min-width: 1280px) {
         .wrap {
             width: 1280px;
             margin: 0 auto;
-            padding: 0 40px;
+            /*padding: 0 40px;*/
         }
 
 
         /* 헤더 */
         header {
+            position: relative;
             height: 100%;
         }
+
+        header > .nav-line {
+            position: absolute;
+            top: 150px;
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #ebebeb;
+            z-index: 120;
+        }
+
+        
+        header > .nav-bg {
+            position: absolute;
+            top: 150px;
+            display: block;
+            width: 100%;
+            height: 350px;
+            background-color: #fff;
+            z-index: 90;
+        }
+
+        header > .nav-line,
+        header > .nav-bg {
+            display: none;
+        }
+        
 
         .header-top {
             display: flex;
@@ -472,55 +901,91 @@ footer {
         }
 
         .util {
+            display: flex;
+        }
+
+        .util li a {
             display: block;
+            padding: 0 7px;
+            line-height: 50px;
+        }
+
+        .util li a:hover {
+            text-decoration: underline;
         }
         
         #menuBtn {
             display: none;
         }
-        
+
         nav {
             display: block;
             position: static;
-            top: none;
-            left: none;
-            height: 50px;
-            width: 100%;
-            z-index: 100;
         }
 
-        nav .main-menu {
+        .main-menu {
             display: flex;
             flex-flow: nowrap;
-            position: relative;
         }
 
-        nav .main-menu > li {
+        .main-menu li {
             width: 100%;
-            line-height: 50px;
             text-align: center;
         }
-
-        nav .main-menu > li > a {
+        
+        .main-menu > li > a {
+            position: relative;
             background: none;
         }
 
-        nav .sub-menu {
-            display: flex;
+        .main-menu li.active a {
+            background: none;
+        }
+
+        .sub-menu {
+            display: none;
+            width: 150px;
+            height: 350px;
             position: absolute;
-            top: 50px;
-            left: 0;
-            background-color: gainsboro;
+            top: 150px;
+            background-color: #fff;
             z-index: 100;
         }
 
-        nav .sub-menu > li{
-            width: 100%;
-            height: 50px;
+        .main-menu > li:hover > a  {
+            color: #227C39;
         }
 
+        .main-menu > li:hover .sub-menu {
+            background-color: #E5EAE8;
+        }
+
+        .sub-menu li a {
+            width: 100%;
+            padding: 0;
+        }
+        
+        .sub-menu li:last-child a {
+           border: none;
+        }
+        
+        .sub-menu li a:hover {
+            text-decoration: underline;
+        } 
+
+        
+        /* 슬라이더 */
         .slider {
             background-color: none;
         }
+
+        /* 자주 찾는 서비스 */
+
+        .quick-menu {
+            grid-template-columns: repeat(8, minmax(140px, 1fr));
+            row-gap: 0;
+        }
+    
+      
     }
 }
