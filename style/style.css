@@ -1,124 +1,3 @@
-/*
-gird를 곳곳에 사용해보았다.
-모바일 -> 태블릿 -> pc 순으로 만들었다.
-*/
-
-body {
-    position: relative;
-    min-width: 320px;
-}
-
-.moblie-nav-bg {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 50;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.moblie-nav-bg.active {
-    display: block;
-}
-
-h2 {
-    padding: 20px 0;
-    line-height: 50px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.wrap {
-    width: 100%;
-    padding: 0 10px 20px 10px;
-   /*  overflow: hidden; */
-}
-
-
-
-/* 헤더 */
-header {
-    height: 50px;
-    position: relative;
-}
-
-.nav-line,
-.nav-bg {
-    display: none;
-}
-
-
-.header-top {
-    display: flex;
-    justify-content: space-between;
-}
-
-h1 > a {
-    display: block; 
-    width: 180px;
-    height: 50px;
-    background: url(../images/logo-moblie.png) no-repeat center left;
-
-}
-
-.util {
-    display: none;
-}
-
-#menuBtn {
-    width: 50px;
-    height: 50px;
-    background: url(../images/btn-menuMoblie.png) no-repeat center right;
-}
-
-nav {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    background-color: #fff;
-}
-
-nav li a {
-    display: block;
-}
-
-.main-menu > li > a {
-    padding: 0 10px;
-    line-height: 50px;
-    font-size: 18px;
-    font-weight: 500;
-    border-bottom: 1px solid #ebebeb;
-    background: url(../images/ico_Down.png) no-repeat center right 10px;
-}
-
-.main-menu > li.active > a {
-    color: #227C39;
-    background: url(../images/ico_Up.png) no-repeat center right 10px;
-}
-
-
-
-.sub-menu li a {
-    line-height: 45px;
-    padding: 0 0 0 20px;
-    font-size: 16px;
-}
-
-.sub-menu li:last-child a {
-    border-bottom: 1px solid #ebebeb;
-}
-
-.sub-menu li a:hover {
-    text-decoration: underline;
-} 
-
-
 /* 슬라이더 */
 .slider {
     width: 100%;
@@ -131,6 +10,8 @@ nav li a {
     display: flex;
     width: 300%;
     height: 100%;
+    position: relative;
+    left: 0;
     background-color: rgb(248, 248, 189);
 }
 
@@ -158,6 +39,7 @@ nav li a {
     margin: 0 5px;
     border-radius: 100px;
     background-color: #fff;
+    transition: all 0.5s;
 }
 
 .slider-btn li:hover {
@@ -169,12 +51,20 @@ nav li a {
     background-color: #227C39;
 }
 
-.slider-btn .stop {
-    width: 20px;
-    height: 20px;
+.slider-btn button {
+    width: 25px;
+    height: 25px;
     border-radius: 100%;
+}
+
+.slider-btn button.play {
     background: url(../images/btn-stop.png) no-repeat center #fff;
 }
+
+.slider-btn button.stop {
+    background: url(../images/btn-play.png) no-repeat center #fff;
+}
+
 
 /* 자주 찾는 서비스 */
 .quick-inner {
@@ -456,6 +346,8 @@ nav li a {
     display: grid;
     grid-template-columns: repeat(3, minmax(100%, 1fr));
     column-gap: 20px;
+    position: relative;
+    left: 0;
 }
 
 
@@ -536,48 +428,6 @@ nav li a {
 
 
 
-/* 푸터 */
-.footer-top {
-    background-color: #227C39;
-    color: #fff;
-    font-weight: 600;
-}
-
-.footer-top .wrap {
-    padding-bottom: 0;
-}
-
-
-.footer-top ul {
-    display: flex;
-}
-
-.footer-top ul li a {
-    display: block;
-    padding: 0 10px;
-    line-height: 50px;
-}
-
-.footer-top ul li:first-child a {
-    padding-left: 0;
-}
-
-.footer-top ul li a:hover {
-    text-decoration: underline;
-}
-
-.footer-logo {
-    display: none;
-}
-
-.footer-bottom ul li {
-    padding: 5px 0;
-}
-
-.footer-bottom ul li span {
-    padding-left: 10px;
-}
-
 @media all and (min-width: 430px) {
     .banner-list li::before{
         padding-bottom: 65%;
@@ -597,62 +447,6 @@ nav li a {
 }
 
 @media all and (min-width: 768px){
-    body {
-        min-width: 320px;
-    }
-
-    .moblie-nav-bg {
-        top: 100px;
-    }
-    
-    h2 {
-        line-height: 50px;
-        text-align: center;
-        font-size: 24px;
-        font-weight: 600;
-    }
-    
-    .wrap {
-        width: 100%;
-        padding: 0 20px 20px 20px;
-        overflow: hidden;
-    }
-    
-    
-    
-    /* 헤더 */
-    header {
-        display: flex;
-        align-items: center;
-        height: 100px;
-    }
-
-    header .wrap {
-        padding-bottom: 0;
-    }
-    
-    h1 > a {
-        display: block; 
-        width: 290px;
-        height: 50px;
-        background: url(../images/logo-normal.png) no-repeat center left;
-
-    }
-
-    #menuBtn {
-        width: 50px;
-        height: 50px;
-        background: url(../images/btn-menu.png) no-repeat center right;
-    }
-
-
-    nav {
-        top: 100px;
-    }
-    
-    
-    
-    
     /* 슬라이더 */
     .slider {
         height: 450px;
@@ -669,7 +463,6 @@ nav li a {
         column-gap: 20px;
         row-gap: 20px;
     }
-
 
     .quick-menu li {
         position: relative;
@@ -761,8 +554,6 @@ nav li a {
     }
     
     
-
-
     /* 전화번호안내 */
     .information .wrap {
         display: grid;
@@ -779,213 +570,62 @@ nav li a {
         margin-bottom: 0;
     }
     
-    
-    
-    /* 푸터 */
-    .footer-bottom .wrap {
-        display: flex;
-        justify-items: flex-start;
-        align-items: center;
-    }
-    .footer-logo {
-        display: block;
-        width: 300px;
-        height: 50px;
-        background: url(../images/logo-footer.png) no-repeat center left;
+}
+
+@media all and (min-width: 1024px){
+    /* 자주 찾는 서비스 */
+    .quick ul {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 10px;
+        row-gap: none;
     }
     
-    .footer-bottom ul li {
-        padding: 5px 0;
+    
+    /* 콘텐츠영역 */
+    .content .wrap {
+        display: grid;
+        grid-template-columns: minmax(560px, 2fr) minmax(364px, 1fr);
+        column-gap: 20px;
     }
     
-    .footer-bottom ul li span {
-        padding-left: 10px;
+    .content .tab {
+        height: 100%;
+        margin-bottom: 0;
     }
 
-    @media all and (min-width: 1024px){
-        .wrap {
-            max-width: 1280px;
-            margin: 0;
-            padding: 0 40px 20px 40px;
-            overflow: hidden;
-        }
-        
-    
-            
-        /* 자주 찾는 서비스 */
-        .quick ul {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            column-gap: 10px;
-            row-gap: none;
-        }
-        
-        
-        /* 콘텐츠영역 */
-        .content .wrap {
-            display: grid;
-            grid-template-columns: minmax(560px, 2fr) minmax(364px, 1fr);
-            column-gap: 20px;
-        }
-        
-        .content .tab {
-            height: 100%;
-            margin-bottom: 0;
-        }
-
-        .banner-list {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(100% , 1fr));
-            column-gap: 20px;
-        }
-
-        .banner-list li:nth-child(1) {
-            background-image: url(../images/banner/1024_banner01.png);
-        }
-        
-        .banner-list li:nth-child(2) {
-            background-image: url(../images/banner/1024_banner02.png);
-        }
-        
-        .banner-list li:nth-child(3) {
-            background-image: url(../images/banner/1024_banner03.png);
-        }
+    .banner-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(100% , 1fr));
+        column-gap: 20px;
     }
 
-    @media all and (min-width: 1280px) {
-        .wrap {
-            width: 1280px;
-            margin: 0 auto;
-            /*padding: 0 40px;*/
-        }
-
-
-        /* 헤더 */
-        header {
-            position: relative;
-            height: 100%;
-        }
-
-        header > .nav-line {
-            position: absolute;
-            top: 150px;
-            display: block;
-            width: 100%;
-            height: 1px;
-            background-color: #ebebeb;
-            z-index: 120;
-        }
-
-        
-        header > .nav-bg {
-            position: absolute;
-            top: 150px;
-            display: block;
-            width: 100%;
-            height: 350px;
-            background-color: #fff;
-            z-index: 90;
-        }
-
-        header > .nav-line,
-        header > .nav-bg {
-            display: none;
-        }
-        
-
-        .header-top {
-            display: flex;
-            align-items: center;
-            height: 100px;
-        }
-
-        .util {
-            display: flex;
-        }
-
-        .util li a {
-            display: block;
-            padding: 0 7px;
-            line-height: 50px;
-        }
-
-        .util li a:hover {
-            text-decoration: underline;
-        }
-        
-        #menuBtn {
-            display: none;
-        }
-
-        nav {
-            display: block;
-            position: static;
-        }
-
-        .main-menu {
-            display: flex;
-            flex-flow: nowrap;
-        }
-
-        .main-menu li {
-            width: 100%;
-            text-align: center;
-        }
-        
-        .main-menu > li > a {
-            position: relative;
-            background: none;
-        }
-
-        .main-menu li.active a {
-            background: none;
-        }
-
-        .sub-menu {
-            display: none;
-            width: 150px;
-            height: 350px;
-            position: absolute;
-            top: 150px;
-            background-color: #fff;
-            z-index: 100;
-        }
-
-        .main-menu > li:hover > a  {
-            color: #227C39;
-        }
-
-        .main-menu > li:hover .sub-menu {
-            background-color: #E5EAE8;
-        }
-
-        .sub-menu li a {
-            width: 100%;
-            padding: 0;
-        }
-        
-        .sub-menu li:last-child a {
-           border: none;
-        }
-        
-        .sub-menu li a:hover {
-            text-decoration: underline;
-        } 
-
-        
-        /* 슬라이더 */
-        .slider {
-            background-color: none;
-        }
-
-        /* 자주 찾는 서비스 */
-
-        .quick-menu {
-            grid-template-columns: repeat(8, minmax(140px, 1fr));
-            row-gap: 0;
-        }
+    .banner-list li:nth-child(1) {
+        background-image: url(../images/banner/1024_banner01.png);
+    }
     
-      
+    .banner-list li:nth-child(2) {
+        background-image: url(../images/banner/1024_banner02.png);
+    }
+    
+    .banner-list li:nth-child(3) {
+        background-image: url(../images/banner/1024_banner03.png);
     }
 }
+
+@media all and (min-width: 1280px) {
+    /* 슬라이더 */
+    .slider {
+        background-color: none;
+    }
+
+    /* 자주 찾는 서비스 */
+
+    .quick-menu {
+        grid-template-columns: repeat(8, minmax(140px, 1fr));
+        row-gap: 0;
+        }
+}
+
+

@@ -1,0 +1,108 @@
+.guide-tit-01 {
+    line-height: 50px;
+    font-size: 22px;
+    font-weight: 500;
+    padding-left: 30px;
+    background: url(../images/ico-bullet.png) no-repeat center left;
+}
+
+.guide-tit-02 {
+    padding-left: 40px;
+    line-height: 75px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.inner-box {
+    padding-bottom: 50px;
+}
+
+.inner-box p,
+.inner-box li {
+    padding-left: 40px;
+    line-height: 39px;
+    font-size: 16px;
+    color: #666;   
+}
+
+.inner-box li {
+    position: relative;
+    padding-left: 60px;
+}
+
+.inner-box li::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 17px;
+    left: 45px;
+    background-color: #227C39;
+}
+
+/* ================================ */
+/* guide02 */
+.guide02 .inner-box li {
+    padding-left: 20px;
+}
+
+.guide02 .inner-box li::before {
+    left: 5px;
+}
+
+
+table {
+    margin: 10px 0;
+    border: 1px solid #ebebeb;
+    border-right: none;
+    border-left: none;
+}
+
+thead th {
+    height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    border-right: 1px solid #fff;
+    background-color: #E5EAE8;
+}
+
+
+tbody td {
+    padding: 10px;
+    line-height: 29px;
+    border-top: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+    text-align: center;
+}
+
+tbody td:last-child {
+    border-right: none;
+}
+
+tbody td.borderRight {
+    border-right: 1px solid #ebebeb;
+}
+
+.discountInfo th:nth-child(1){
+    width: 20%;
+}
+
+.discountInfo th:nth-child(2){
+    width: 15%;
+}
+
+.discountInfo td:last-child {
+    text-align: left;
+}
+
+/* ================================ */
+/* guide03 */
+
+.guide03 .inner-box table li {
+    padding-left: 10px;
+}
+
+.guide03 .inner-box table li ::before {
+    left: 0;
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거주자우선주차</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="kp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중랑구거주자우선주차</title>
+    <link rel="stylesheet" href="style/defalut.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/enforcement.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="moblie-nav-bg"></div>
+    <header>
+        <div class="wrap">
+            <div class="header-top">
+                <h1><a href="index.html"><div class="hide">중랑구거주자우선주차</div></a></h1>
+                <ul class="util">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="#none">로그인</a></li>
+                    <li><a href="#none">회원가입</a></li>
+                    <li><a href="#none">오시는길</a></li>
+                </ul>
+                <button id="menuBtn">
+                    <div class="hide">메뉴열기</div>
+                </button>
+            </div>
+            <nav>
+                <ul class="main-menu">
+                    <li>
+                        <a href="#none">나의정보</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">현재사용구획</a></li>
+                            <li><a href="#none">신청내용확인</a></li>
+                            <li><a href="#none">개별공지사항</a></li>
+                            <li><a href="#none">개인정보변경</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">변경신청</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">변경신청</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">주차신청</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">정기신청</a></li>
+                            <li><a href="#none">수시신청</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">배정확인</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">배정확인</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">요금납부</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">요금결제하기</a></li>
+                            <li><a href="#none">결제내용역확인</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">주차권출력</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">주차권출력</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="enforcement.html">단속조회</a>
+                        <ul class="sub-menu">
+                            <li><a href="enforcement.html">단속조회</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">이용안내</a>
+                        <ul class="sub-menu">
+                            <li><a href="guide01.html">제도안내</a></li>
+                            <li><a href="guide02.html">요금/시간안내</a></li>
+                            <li><a href="guide03.html">신청/배정안내</a></li>
+                            <li><a href="guide04.html">공영주차</a></li>
+                            <li><a href="guide05.html">부정주차단속</a></li>
+                            <li><a href="guide06.html">FAQ 자주하는질문</a></li>
+                            <li><a href="guide07.html">공지사항</a></li>
+                        </ul>
+                    </li>   
+                </ul>
+            </nav>
+        </div>
+        <span class="nav-line"></span>
+        <span class="nav-bg"></span>
+    </header>
+    <main class="wrap">
+        <aside>
+            <h2 class="aside-tit">단속조회</h2>
+            <ul class="aside-menu-list">
+                <li class="active"><a href="#none">내역 조회 및 결제</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <div class="content-tit">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="#none">단속조회</a></li>
+                    <li><a href="#none">내역 조회 및 결제</a></li>
+                </ul>  
+                <h3>내역 조회 및 결제</h3>
+            </div>
+            <div class="content-notice">
+                <ul class="notice-list">
+                    <li>고객번호는 미납건당 부여하는 번호임으로 1개의 고객번호로 1건의 미납요금 만 조회 및 결제 가능.</li>
+                    <li>휴대폰인증 조회 시 주차시스템 휴대폰등록된 미납건만 조회 및 결제 가능.</li>
+                    <li>미납요금 조회가 안 될 경우 담당자 문의 하시기 바랍니다.</li>
+                </ul>
+            </div>
+            <div class="content-inner">
+                <fieldset>
+                    <legend>단속내역 조회를 위한 양식</legend>
+                    <ul class="form-list">
+                        <li>
+                            <label for="carNumber" class="input-tit">차량번호</label>
+                            <input type="text" id="carNumber" placeholder="차량번호를 입력하세요">
+                        </li>
+                        <li>
+                            <label for="phoneNumber" class="input-tit">핸드폰</label>
+                            <input type="number" id="phoneNumber" placeholder="핸드폰 번호를 입력하세요">
+                        </li>
+                        <li>
+                            <p class="input-tit">납부상태</p>
+                            <ul class="radio-list">
+                                <li>
+                                    <input type="radio" id="statusNoPay" name="payStatus">
+                                    <label for="statusNoPay">미납</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="statusPay" name="payStatus">
+                                    <label for="statusPay">완납</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="statusAll" name="payStatus">
+                                    <label for="statusAll">전체</label>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </fieldset>
+                <button class="search">조회</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="wrap">
+                <ul>
+                    <li><a href="#none">개인정보처리방침</a></li>
+                    <li><a href="#none">홈페이지 이용약관</a></li>
+                    <li><a href="#none">오시는길</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="wrap">
+                <div class="footer-logo">
+                    <div class="hide">중랑구시설관리공단</div>
+                </div>
+                <ul>
+                    <li>서울시 중랑구 겸재로23길 27(면목동)<span>우편번호 : 02140</span></li>
+                    <li>일반팩스 : 02-491-4890<span>모바일팩스 : 0504-422-4888</span></li>
+                    <li>Copyright ⓒ 2024 sound. All Rights Reserved</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="script/script.js"></script>
+</body>
+</html>
+    
+</body>
+</html>

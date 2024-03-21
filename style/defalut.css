@@ -177,4 +177,489 @@ legend,
     top: 0;
 }
 
+/* Index 페이지 공통 Stlye */
+body {
+    position: relative;
+    min-width: 320px;
+}
+
+.moblie-nav-bg {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.moblie-nav-bg.active {
+    display: block;
+}
+
+h2 {
+    padding: 20px 0;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.wrap {
+    width: 100%;
+    padding: 0 10px 20px 10px;
+    box-sizing: border-box;
+   /*  overflow: hidden; */
+}
+
+
+
+/* 헤더 */
+header {
+    height: 50px;
+    position: relative;
+}
+
+.nav-line,
+.nav-bg {
+    display: none;
+}
+
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 > a {
+    display: block; 
+    width: 180px;
+    height: 50px;
+    background: url(../images/logo-moblie.png) no-repeat center left;
+
+}
+
+.util {
+    display: none;
+}
+
+#menuBtn {
+    width: 50px;
+    height: 50px;
+    background: url(../images/btn-menuMoblie.png) no-repeat center right;
+}
+
+nav {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
+}
+
+nav li a {
+    display: block;
+}
+
+.main-menu > li > a {
+    padding: 0 10px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid #ebebeb;
+    background: url(../images/ico_Down.png) no-repeat center right 10px;
+}
+
+.main-menu > li.active > a {
+    color: #227C39;
+    background: url(../images/ico_Up.png) no-repeat center right 10px;
+}
+
+.sub-menu li a {
+    line-height: 45px;
+    padding: 0 0 0 20px;
+    font-size: 16px;
+}
+
+.sub-menu li:last-child a {
+    border-bottom: 1px solid #ebebeb;
+}
+
+.sub-menu li a:hover {
+    text-decoration: underline;
+} 
+
+/* 푸터 */
+.footer-top {
+    background-color: #227C39;
+    color: #fff;
+    font-weight: 600;
+}
+
+.footer-top .wrap {
+    padding-bottom: 0;
+}
+
+
+.footer-top ul {
+    display: flex;
+}
+
+.footer-top ul li a {
+    display: block;
+    padding: 0 10px;
+    line-height: 50px;
+}
+
+.footer-top ul li:first-child a {
+    padding-left: 0;
+}
+
+.footer-top ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    display: none;
+}
+
+.footer-bottom ul li {
+    padding: 5px 0;
+}
+
+.footer-bottom ul li span {
+    padding-left: 10px;
+}
+
+@media all and (min-width: 768px){
+    body {
+        min-width: 320px;
+    }
+
+    .moblie-nav-bg {
+        top: 100px;
+    }
+    
+    h2 {
+        line-height: 50px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    
+    .wrap {
+        width: 100%;
+        padding: 0 20px 20px 20px;
+        overflow: hidden;
+    }
+    
+    
+    /* 헤더 */
+    header {
+        display: flex;
+        align-items: center;
+        height: 100px;
+    }
+
+    header .wrap {
+        padding-bottom: 0;
+    }
+    
+    h1 > a {
+        display: block; 
+        width: 290px;
+        height: 50px;
+        background: url(../images/logo-normal.png) no-repeat center left;
+
+    }
+
+    #menuBtn {
+        width: 50px;
+        height: 50px;
+        background: url(../images/btn-menu.png) no-repeat center right;
+    }
+
+    nav {
+        top: 100px;
+    }
+
+    /* 푸터 */
+    .footer-bottom .wrap {
+        display: flex;
+        justify-items: flex-start;
+        align-items: center;
+    }
+    .footer-logo {
+        display: block;
+        width: 300px;
+        height: 50px;
+        background: url(../images/logo-footer.png) no-repeat center left;
+    }
+    
+    .footer-bottom ul li {
+        padding: 5px 0;
+    }
+    
+    .footer-bottom ul li span {
+        padding-left: 10px;
+    }
+}
+
+@media all and (min-width: 1024px){
+    .wrap {
+        max-width: 1280px;
+        margin: 0;
+        padding: 0 40px 20px 40px;
+        overflow: hidden;
+    }
+}
+
+@media all and (min-width: 1280px) {
+    .wrap {
+        width: 1280px;
+        margin: 0 auto;
+        /*padding: 0 40px;*/
+    }
+
+
+    /* 헤더 */
+    header {
+        position: relative;
+        height: 100%;
+    }
+
+    header > .nav-line {
+        position: absolute;
+        top: 150px;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #ebebeb;
+        z-index: 120;
+    }
+
+    
+    header > .nav-bg {
+        position: absolute;
+        top: 150px;
+        display: block;
+        width: 100%;
+        height: 350px;
+        background-color: #fff;
+        z-index: 90;
+    }
+
+    header > .nav-line,
+    header > .nav-bg {
+        display: none;
+    }
+    
+
+    .header-top {
+        display: flex;
+        align-items: center;
+        height: 100px;
+    }
+
+    .util {
+        display: flex;
+    }
+
+    .util li a {
+        display: block;
+        padding: 0 7px;
+        line-height: 50px;
+    }
+
+    .util li a:hover {
+        text-decoration: underline;
+    }
+    
+    #menuBtn {
+        display: none;
+    }
+
+    nav {
+        display: block;
+        position: static;
+    }
+
+    .main-menu {
+        display: flex;
+        flex-flow: nowrap;
+    }
+
+    .main-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-menu li a {
+        border: none;
+    }
+    
+    .main-menu > li > a {
+        position: relative;
+        background: none;
+    }
+
+    .main-menu li.active a {
+        background: none;
+    }
+
+    .sub-menu {
+        display: none;
+        width: 150px;
+        height: 350px;
+        position: absolute;
+        top: 150px;
+        background-color: #fff;
+        z-index: 100;
+    }
+
+    .main-menu > li:hover > a  {
+        color: #227C39;
+    }
+
+    .main-menu > li:hover .sub-menu {
+        background-color: #E5EAE8;
+    }
+
+    .sub-menu li a {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .sub-menu li:last-child a {
+        border: none;
+    }
+    
+    .sub-menu li a:hover {
+        text-decoration: underline;
+    } 
+}
+
+/* sub 페이지 공통 Style */
+main.wrap {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+aside,
+.breadcrumb {
+    display: none;
+}
+
+.content {
+    width: 100%;
+}
+
+.content-tit h3 {
+    line-height: 80px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media all and (min-width: 1024px){
+    main.wrap {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+    }
+    
+    aside,
+    .breadcrumb {
+        display: block;
+    }
+
+    aside {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 23.4%;
+        padding-right: 20px;
+    }
+
+    aside h2 {
+        height: 80px;
+        border-bottom: 1px solid #ebebeb;
+    }
+    
+    .aside-menu-list {
+        line-height: 50px;
+    }
+
+    .aside-menu-list li {
+        padding: 0 0 0 10px;
+        border-bottom: 1px solid #ebebeb;
+    }
+
+    .aside-menu-list li:hover {
+        background-color: #E5EAE8;
+    }
+
+    .aside-menu-list li.active {
+        background-color: #227C39;
+        color: #fff;
+    }
+
+    .content {
+        width: 76.6%;
+    }
+
+    .content-tit {
+        position: relative;
+    }
+
+    .content-tit .breadcrumb {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+    }
+
+    .content-tit .breadcrumb li {
+        padding: 0 30px 0 0;
+        font-size: 14px;
+        color: #666;
+        background: url(../images/ico-rt.png) no-repeat top 5px right 13px;
+    }
+
+    .content-tit .breadcrumb li:last-child {
+        padding: 0;
+        background: none;
+    }
+
+}
+
+@media all and (min-width: 1280px){
+    .nav-line {
+        display: block;
+    }
+
+    aside {
+        padding-right: 40px;
+    }
+
+    aside h2 {
+        height: 100px;
+        line-height: 100px;
+    }
+
+    .content-tit h3 {
+        height: 100px;
+        line-height: 100px;
+    }
+
+    .content-tit .breadcrumb {
+        top: 10px;
+    }
+}
+
+
+
 

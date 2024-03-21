@@ -1,0 +1,160 @@
+.content-notice {
+    width: 100%;
+    padding: 15px;
+    background-color: #F9FAFC;
+    border: 1px solid #ebebeb;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.notice-list {
+    line-height: 32px;
+}
+
+.notice-list li {
+    padding-left: 10px;
+    position: relative;
+}
+
+.notice-list li::before {
+    display: block;
+    content: "";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 14px;
+    left: 0;
+    background-color: #227C39;
+}
+
+.content-inner {
+    padding: 20px 0 0;
+}
+
+.form-list li {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 600px;
+    padding: 0 0 20px;
+}
+
+.form-list li .input-tit {
+    padding: 0 0 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.form-list li input {
+    display: block;
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: 50px;
+    border: 1px solid #ebebeb;
+}
+
+.form-list li input:focus {
+    outline: none;
+    border: 1px solid #227C39;
+}
+
+.form-list li input::placeholder {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    color: #999;
+}
+
+.radio-list {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: 50px;
+    border: 1px solid #ebebeb;
+}
+
+.radio-list li {
+    display: flex;
+    flex-flow: row;
+    padding: 0 5px;
+}
+
+.radio-list li input {
+    position: absolute;
+    left: -999999px;
+}
+
+.radio-list li label {
+    padding-left: 25px;
+    line-height: 50px;
+    background: url(../images/btn-radio-normal.png) no-repeat center left;
+}
+
+.radio-list li input[type="radio"]:checked + label {
+    background: url(../images/btn-radio-active.png) no-repeat center left;
+}
+
+.search {
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 50px;
+    background-color: #227C39;
+}
+
+@media all and (min-width: 768px){
+    .form-list li {
+        width: 90%;
+        margin: 0 auto;
+        flex-flow: row nowrap;
+    }
+    
+    .form-list li .input-tit {
+        width: 30%;
+        padding: 0;
+        line-height: 50px;
+        background-color: #ECECEC;
+        border: #ebebeb;
+        border-right: none;
+        border-radius: 50px 0 0 50px;
+    }
+    
+    .form-list li input {
+        width: 70%;
+        height: 50px;
+        margin: 0;
+        padding: 0 20px;
+        border-radius: 0 50px 50px 0;
+    }
+    
+    .radio-list {
+        width: 70%;
+        height: 50px;
+        margin: 0;
+        padding: 0 20px;
+        border-radius: 0 50px 50px 0;
+    }
+}
+
+@media all and (min-width: 1280px){
+    .content-notice {
+        padding: 25px;
+    }
+            
+    .content-inner {
+        padding: 40px 0 0;
+    }
+
+    .form-list li:last-child {
+        padding: 0 0 40px;
+    }
+
+
+}
