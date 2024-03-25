@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중랑구거주자우선주차</title>
+    <link rel="stylesheet" href="style/defalut.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/guide.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="moblie-nav-bg"></div>
+    <header>
+        <div class="wrap">
+            <div class="header-top">
+                <h1><a href="index.html"><div class="hide">중랑구거주자우선주차</div></a></h1>
+                <ul class="util">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="#none">로그인</a></li>
+                    <li><a href="#none">회원가입</a></li>
+                    <li><a href="#none">오시는길</a></li>
+                </ul>
+                <button id="menuBtn">
+                    <div class="hide">메뉴열기</div>
+                </button>
+            </div>
+            <nav>
+                <ul class="main-menu">
+                    <li>
+                        <a href="#none">나의정보</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">현재사용구획</a></li>
+                            <li><a href="#none">신청내용확인</a></li>
+                            <li><a href="#none">개별공지사항</a></li>
+                            <li><a href="#none">개인정보변경</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">변경신청</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">변경신청</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">주차신청</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">정기신청</a></li>
+                            <li><a href="#none">수시신청</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">배정확인</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">배정확인</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">요금납부</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">요금결제하기</a></li>
+                            <li><a href="#none">결제내용역확인</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">주차권출력</a>
+                        <ul class="sub-menu">
+                            <li><a href="#none">주차권출력</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="enforcement.html">단속조회</a>
+                        <ul class="sub-menu">
+                            <li><a href="enforcement.html">단속조회</a></li>
+                        </ul>
+                    </li>   
+                    <li>
+                        <a href="#none">이용안내</a>
+                        <ul class="sub-menu">
+                            <li><a href="guide01.html">제도안내</a></li>
+                            <li><a href="guide02.html">요금/시간안내</a></li>
+                            <li><a href="guide03.html">신청/배정안내</a></li>
+                            <li><a href="guide04.html">공영주차</a></li>
+                            <li><a href="guide05.html">부정주차단속</a></li>
+                            <li><a href="guide06.html">FAQ 자주하는질문</a></li>
+                            <li><a href="guide07.html">공지사항</a></li>
+                        </ul>
+                    </li>   
+                </ul>
+            </nav>
+        </div>
+        <span class="nav-line"></span>
+        <span class="nav-bg"></span>
+    </header>
+    <main class="wrap guide06">
+        <aside>
+            <h2 class="aside-tit">신청/배정안내</h2>
+            <ul class="aside-menu-list">
+                <li><a href="guide01.html">제도안내</a></li>
+                <li><a href="guide02.html">요금/시간안내</a></li>
+                <li><a href="guide03.html">신청/배정안내</a></li>
+                <li><a href="guide04.html">공영주차</a></li>
+                <li><a href="guide05.html">부정주차단속</a></li>
+                <li class="active"><a href="guide06.html">FAQ 자주하는질문</a></li>
+                <li><a href="guide07.html">공지사항</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <div class="content-tit">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="#none">이용안내</a></li>
+                    <li><a href="#none">FAQ 자주하는질문</a></li>
+                </ul>  
+                <h3>FAQ 자주하는질문</h3>
+            </div>
+            <div class="content-inner">
+                <div class="inner-box top">
+                    <div class="search-box">
+                        <div class="search-inner">
+                            <input type="text" placeholder="검색어를 입력하세요">
+                            <button class="search-btn">검색</button>
+                        </div>
+                    </div>
+                    <ul class="category">
+                        <li class="active"><button>전체</button></li>
+                        <li><button>신청</button></li>
+                        <li><button>입금</button></li>
+                        <li><button>배정</button></li>
+                        <li><button>주차권</button></li>
+                        <li><button>시행</button></li>
+                        <li><button>단속</button></li>
+                    </ul>
+                </div>
+                <div class="inner-box">
+                    <table>
+                        <caption>
+                            <div class="hide">FAQ 게시판</div>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>작성일</th>
+                                <th>조회수</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="question active">
+                                <td>29</td>
+                                <td class="align-left">거주자우선주차제의 할인혜택 및 할인율은 어떻게 됩니까?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">
+                                    유공자, 장애인은 80%,<br>
+                                    저공해차량, 경차, 장기·인체조직 기증자, 다둥이 세자녀 이상은 50%,<br>
+                                    병역명문가, 다둥이 두자녀는 30%의 할인혜택을 드립니다.
+                                </td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">거주자우선주차제를 배정받지 못한 사람은 어떻게 되나요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">대기자로 등록된 후 이사, 차량매매, 차량폐차 등으로 취소 구획이 나오면, 해당 구획의 대기자 중 [배점기준표]에 의한
+                                    최고득점자를 배정하게 됩니다.</td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">배정받아 사용하던 주차구획이 공사로 삭선되면 어떻게 처리해주나요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">납부하신 주차구획 사용료는 미사용 기간만큼 환불해드리고, 인근에 빈구획 발생시 우선적으로 배정해드립니다.</td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">거주자우선주차구획에 주차했다가 단속 견인되면 과태료도 부과 되나요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">
+                                    <p>
+                                        견인 시 별도의 과태료는 부과되지 않으며, 견인료와 보관료만 부과됩니다.<br>
+                                        서울특별시 주·정차 위반 등에 관한 조례 [별표] 소요비용 산정 기준에 의거하여 부과됩니다.
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            1. 견인료는 차종에 따라 부과됩니다.
+                                            <ul>
+                                                <li>승용(경형 : 40,000원, 소형 : 45,000원, 중형 : 50,000원, 대형 : 60,000원)</li>
+                                                <li>승합(경형 : 40,000원, 소형 : 60,000원, 중형 : 80,000원, 대형 : 140,000원)</li>
+                                                <li>화물(2.5톤 미만 : 40,000원)</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            2. 보관료는 30분당 700원(승합자동차 중 중형과 대형은 1,200원)입니다.
+                                            <ul>
+                                                <li>경형(1,000cc 미만)</li>
+                                                <li>소형(1,600cc 미만)</li>
+                                                <li>중형(2,000cc 미만)</li>
+                                                <li>대형(2,000cc 이상)</li>
+                                            </ul>   
+                                        </li>
+                                    </ol>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">주차요금 납부시 분납도 가능한가요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">주차요금은 분기별(3개월 분) 선납인 관계로 월 분납은 어렵습니다.<br>
+                                    사용 중에 취소사유가 발생하면 잔여기간만큼 환불해드립니다.</td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">주차구획에 주차했다가 파손되었는데 어떻게 보상 받아야하나요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">거주자우선주차구획은 관리인이 상주하지 않는 임시 노상주차장으로 차량파손, 도난등 물적 손해사항은 사용자가 모든
+                                    책임을 지도록 되어있습니다</td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">거주자우선주차 배정기간은 어떻게 되나요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">
+                                    주민들의 요청 및 이용편익에 따라 연단위(1년)로 배정합니다.<br>
+                                    사용기간은 당해년도 4.01~다음년도 3.31까지로 1년이며, 정기신청은 2월경에 실시하며, 일정은 변경될 수 있으니,
+                                    중랑구 거주자우선주차 사이트를 참고하시기 바랍니다.<br>
+                                    ※ 수시신청은 언제든지 가능합니다.
+                                </td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">배정받아 사용하던 주차구획이 공사로 삭선되면 어떻게 처리해주나요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">납부하신 주차구획 사용료는 미사용 기간만큼 환불해드리고, 인근에 빈구획 발생시 우선적으로 배정해드립니다.</td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">거주자우선주차구획에 주차했다가 단속 견인되면 과태료도 부과 되나요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">
+                                    <p>
+                                        견인 시 별도의 과태료는 부과되지 않으며, 견인료와 보관료만 부과됩니다.<br>
+                                        서울특별시 주·정차 위반 등에 관한 조례 [별표] 소요비용 산정 기준에 의거하여 부과됩니다.
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            1. 견인료는 차종에 따라 부과됩니다.
+                                            <ul>
+                                                <li>승용(경형 : 40,000원, 소형 : 45,000원, 중형 : 50,000원, 대형 : 60,000원)</li>
+                                                <li>승합(경형 : 40,000원, 소형 : 60,000원, 중형 : 80,000원, 대형 : 140,000원)</li>
+                                                <li>화물(2.5톤 미만 : 40,000원)</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            2. 보관료는 30분당 700원(승합자동차 중 중형과 대형은 1,200원)입니다.
+                                            <ul>
+                                                <li>경형(1,000cc 미만)</li>
+                                                <li>소형(1,600cc 미만)</li>
+                                                <li>중형(2,000cc 미만)</li>
+                                                <li>대형(2,000cc 이상)</li>
+                                            </ul>   
+                                        </li>
+                                    </ol>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">주차요금 납부시 분납도 가능한가요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">주차요금은 분기별(3개월 분) 선납인 관계로 월 분납은 어렵습니다.<br>
+                                    사용 중에 취소사유가 발생하면 잔여기간만큼 환불해드립니다.</td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">주차구획에 주차했다가 파손되었는데 어떻게 보상 받아야하나요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">거주자우선주차구획은 관리인이 상주하지 않는 임시 노상주차장으로 차량파손, 도난등 물적 손해사항은 사용자가 모든
+                                    책임을 지도록 되어있습니다</td>
+                            </tr>
+                            <tr class="question">
+                                <td>29</td>
+                                <td class="align-left">거주자우선주차 배정기간은 어떻게 되나요?</td>
+                                <td>2011-12-30</td>
+                                <td>489</td>
+                            </tr>
+                            <tr class="answer">
+                                <td colspan="4" class="align-left">
+                                    주민들의 요청 및 이용편익에 따라 연단위(1년)로 배정합니다.<br>
+                                    사용기간은 당해년도 4.01~다음년도 3.31까지로 1년이며, 정기신청은 2월경에 실시하며, 일정은 변경될 수 있으니,
+                                    중랑구 거주자우선주차 사이트를 참고하시기 바랍니다.<br>
+                                    ※ 수시신청은 언제든지 가능합니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="page">
+                        <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <div class="wrap">
+                <ul>
+                    <li><a href="#none">개인정보처리방침</a></li>
+                    <li><a href="#none">홈페이지 이용약관</a></li>
+                    <li><a href="#none">오시는길</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="wrap">
+                <div class="footer-logo">
+                    <div class="hide">중랑구시설관리공단</div>
+                </div>
+                <ul>
+                    <li>서울시 중랑구 겸재로23길 27&#40;면목동&#41;<span>우편번호 : 02140</span></li>
+                    <li>일반팩스 : 02-491-4890<span>모바일팩스 : 0504-422-4888</span></li>
+                    <li>Copyright ⓒ 2024 sound. All Rights Reserved</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="script/script.js"></script>
+</body>
+</html>

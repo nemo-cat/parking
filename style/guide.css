@@ -20,14 +20,15 @@
 .inner-box p,
 .inner-box li {
     padding-left: 40px;
+    position: relative;
     line-height: 39px;
     font-size: 16px;
     color: #666;   
 }
 
-.inner-box li {
-    position: relative;
-    padding-left: 60px;
+
+.inner-box ol > li::before {
+    display: none;
 }
 
 .inner-box li::before {
@@ -37,20 +38,9 @@
     height: 5px;
     position: absolute;
     top: 17px;
-    left: 45px;
+    left: 20px;
     background-color: #227C39;
 }
-
-/* ================================ */
-/* guide02 */
-.guide02 .inner-box li {
-    padding-left: 20px;
-}
-
-.guide02 .inner-box li::before {
-    left: 5px;
-}
-
 
 table {
     margin: 10px 0;
@@ -61,12 +51,13 @@ table {
 
 thead th {
     height: 50px;
+    padding: 10px;
     font-size: 18px;
     font-weight: 500;
     border-right: 1px solid #fff;
     background-color: #E5EAE8;
+    text-align: center;
 }
-
 
 tbody td {
     padding: 10px;
@@ -84,6 +75,29 @@ tbody td.borderRight {
     border-right: 1px solid #ebebeb;
 }
 
+/* ================================ */
+/* guide01 */
+.guide01 .inner-box li {
+    padding-left: 60px;
+    line-height: 39px;
+    font-size: 16px;
+    color: #666;   
+}
+
+.guide01 .inner-box li::before {
+    left: 45px;
+}
+
+/* ================================ */
+/* guide02 */
+.guide02 .inner-box li {
+    padding-left: 20px;
+}
+
+.guide02 .inner-box li::before {
+    left: 5px;
+}
+
 .discountInfo th:nth-child(1){
     width: 20%;
 }
@@ -99,10 +113,205 @@ tbody td.borderRight {
 /* ================================ */
 /* guide03 */
 
+.guide03 .guide-tit-02 {
+    padding-left: 0;
+}
+
 .guide03 .inner-box table li {
     padding-left: 10px;
 }
 
 .guide03 .inner-box table li ::before {
     left: 0;
+}
+
+.guide03 .inner-box ul > li {
+    padding-left: 30px;
+}
+ 
+
+.guide03 .inner-box li::before {
+    left: 15px;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.table-moblie .question .align-left {
+   text-align: center;
+}
+
+/* ================================ */
+/* guide04 */
+.guide04 table thead tr {
+    border-top: 1px solid #fff;
+}
+
+/* ================================ */
+/* guide05 */
+.guide05 .guide-tit-02 {
+    padding-left: 0;
+}
+
+.guide05 .inner-box p {
+    padding-left: 20px;
+}
+
+.goto-reservation {
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    margin: 20px auto;
+    border-radius: 50px;
+    background-color: #227C39;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.goto-reservation:hover {
+    text-decoration: underline;
+}
+
+/* ================================ */
+/* guide06 */
+
+.guide06 thead th {
+    border: none;
+}
+
+.guide06 tbody td {
+    border: none;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.guide06 tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+tr.answer td {
+    display: none;
+}
+
+.guide06 tbody tr.active + tr.answer td {
+    /*tr, td에 dispaly:block을 주면 레이아웃이 깨짐*/
+    display: table-cell;
+    padding: 30px 60px;
+    background-color: #f9f9f9;
+}
+
+.inner-box.top {
+    display: none;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 10px 0 ;
+}
+
+.search-box {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+}
+
+.search-box .search-inner {
+    position: relative;
+    width: 80%;
+    min-width: 200px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    line-height: 50px;
+    border-radius: 50px;
+    border: 1px solid #ebebeb;
+}
+
+.search-box button {
+    position: absolute;
+    right: 0;
+    width: 80px;
+    border-radius: 0 50px 50px 0;
+    background-color: #227C39;
+    color: #fff;
+}
+
+
+.category {
+    display: flex;   
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.guide06 .category li {
+    padding: 5px;
+    line-height: normal;
+}
+
+.guide06 .category li button {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 30px;
+    border: 1px solid #ebebeb;
+    background-color: #fff;
+    border-radius: 50px;
+}
+
+.guide06 .category li.active button {
+    border: 1px solid #227C39;
+    color: #227C39;
+}
+
+.guide06 .category li:hover button {
+    text-decoration: underline;
+} 
+
+.guide06 .category li::before,
+.guide06 .page li::before  {
+    display: none;
+}
+
+.guide06 .page {
+    display: flex;
+    justify-content: center;
+}
+
+.guide06 .inner-box .page li {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0 5px;
+    line-height: 30px;
+    border-radius: 100%;
+    background-color: #fff;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+.guide06 .inner-box .page li:hover {
+    background-color: #E5EAE8;
+}
+
+
+.guide06 .inner-box .page li.active {
+    background-color: #227C39;
+    color: #fff;
+}
+
+
+/* ================================ */
+/* guide07 */
+
+
+@media all and (min-width: 768px){
+    .inner-box.top {
+        display: flex;
+    }
+
 }

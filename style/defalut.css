@@ -119,6 +119,17 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
+input[type="text"]:focus {
+    outline: none;
+    border: 1px solid #227C39;
+}
+
+input[type="text"]::placeholder {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    color: #999;
+}
+
 .ie9 .test {
     position: relative;
     z-index: 0;
@@ -608,7 +619,7 @@ aside,
     }
 
     .content {
-        width: 76.6%;
+        width: 100%;
     }
 
     .content-tit {
