@@ -1,0 +1,78 @@
+section {
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+}
+
+section div {
+    display: flex;
+    flex-flow: column;
+}
+
+section div.user-id {
+    padding-bottom: 20px;
+}
+
+section div label {
+    text-align: center;
+    padding: 10px 0;
+}
+
+section div input {
+    height: 50px;
+    padding-left: 20px;
+    border-radius: 50px;
+    border: 1px solid #ebebeb;
+}
+
+section div input::placeholder {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    color: #999;
+}
+
+section button {
+    align-self: center;
+    width: 200px;
+    height: 50px;
+    margin: 30px 0;
+    border-radius: 50px;
+    background-color: #227C39;
+    color: #fff;
+}
+
+section ul {
+    display: flex;
+    justify-content: center;
+}
+
+section ul li a {
+    font-size: 12px;
+    color: #999;
+    padding: 0 5px;
+}
+
+@media all and (min-width: 768px){
+    main {
+        display: flex;
+        justify-content: center;
+    }
+
+    section {
+        align-items: center;
+    }
+
+    section div {
+        width: 80%;
+        max-width: 600px;
+        align-items: center;
+    }
+
+    section div label {
+        width: 20%;
+    }
+    
+    section div input {
+        width: 80%;
+    }
+}

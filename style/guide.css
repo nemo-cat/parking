@@ -6,20 +6,32 @@
     background: url(../images/ico-bullet.png) no-repeat center left;
 }
 
+/* 수정 */
 .guide-tit-02 {
+    display: flex;
+    align-items: center;
+    height: 75px;
+    padding: 10px 0;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+/* .guide-tit-02 {
     padding-left: 40px;
     line-height: 75px;
     font-size: 20px;
     font-weight: 500;
-}
+} */
 
 .inner-box {
     padding-bottom: 50px;
 }
 
+
+/* 수정 */
 .inner-box p,
 .inner-box li {
-    padding-left: 40px;
+    padding-left: 10px;
     position: relative;
     line-height: 39px;
     font-size: 16px;
@@ -31,6 +43,7 @@
     display: none;
 }
 
+/* 수정 */
 .inner-box li::before {
     content: "";
     display: block;
@@ -38,7 +51,7 @@
     height: 5px;
     position: absolute;
     top: 17px;
-    left: 20px;
+    left: 0;
     background-color: #227C39;
 }
 
@@ -49,14 +62,29 @@ table {
     border-left: none;
 }
 
+
+.table-pc {
+    display: none;
+}
+
+/* pc */
 thead th {
     height: 50px;
     padding: 10px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     border-right: 1px solid #fff;
     background-color: #E5EAE8;
     text-align: center;
+}
+
+thead th:nth-child(1){
+    min-width: calc(100% - 160px);
+}
+
+thead th:nth-child(2),
+thead th:nth-child(3){
+    min-width: 80px;
 }
 
 tbody td {
@@ -77,15 +105,16 @@ tbody td.borderRight {
 
 /* ================================ */
 /* guide01 */
+/* 수정 */
 .guide01 .inner-box li {
-    padding-left: 60px;
+    padding-left: 25px;
     line-height: 39px;
     font-size: 16px;
     color: #666;   
 }
 
 .guide01 .inner-box li::before {
-    left: 45px;
+    left: 10px;
 }
 
 /* ================================ */
@@ -125,27 +154,26 @@ tbody td.borderRight {
     left: 0;
 }
 
-.guide03 .inner-box ul > li {
-    padding-left: 30px;
-}
- 
-
-.guide03 .inner-box li::before {
-    left: 15px;
-}
-
 .align-left {
     text-align: left;
-}
-
-.table-moblie .question .align-left {
-   text-align: center;
 }
 
 /* ================================ */
 /* guide04 */
 .guide04 table thead tr {
     border-top: 1px solid #fff;
+}
+
+.guide04 .table-moblie table {
+    width: 100%;
+}
+
+.guide04 .table-moblie .width-70 {
+    min-width: 70px;
+}
+
+.guide04 .table-moblie .width-80 {
+    min-width: 80px;
 }
 
 /* ================================ */
@@ -176,6 +204,13 @@ tbody td.borderRight {
     text-decoration: underline;
 }
 
+.guide05 thead th:nth-child(1) {
+    min-width: 80px;
+}
+
+
+
+
 /* ================================ */
 /* guide06 */
 
@@ -199,7 +234,7 @@ tr.answer td {
 .guide06 tbody tr.active + tr.answer td {
     /*tr, td에 dispaly:block을 주면 레이아웃이 깨짐*/
     display: table-cell;
-    padding: 30px 60px;
+    padding: 20px 15px;
     background-color: #f9f9f9;
 }
 
@@ -245,6 +280,7 @@ tr.answer td {
 .category {
     display: flex;   
     flex-flow: row wrap;
+    justify-content: center;
     width: 100%;
 }
 
@@ -310,6 +346,148 @@ tr.answer td {
 
 
 @media all and (min-width: 768px){
+    .guide-tit-01 {
+        line-height: 50px;
+        font-size: 22px;
+        font-weight: 500;
+        padding-left: 30px;
+        background: url(../images/ico-bullet.png) no-repeat center left;
+    }
+    
+    .guide-tit-02 {
+        padding-left: 40px;
+        line-height: 75px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    .inner-box {
+        padding-bottom: 50px;
+    }
+    
+    .inner-box p,
+    .inner-box li {
+        padding-left: 40px;
+        position: relative;
+        line-height: 39px;
+        font-size: 16px;
+        color: #666;   
+    }
+    
+    
+    .inner-box ol > li::before {
+        display: none;
+    }
+    
+    .inner-box li::before {
+        content: "";
+        display: block;
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        top: 17px;
+        left: 20px;
+        background-color: #227C39;
+    }
+    
+    table {
+        margin: 10px 0;
+        border: 1px solid #ebebeb;
+        border-right: none;
+        border-left: none;
+    }
+    
+    
+    .table-pc {
+        display: none;
+    }
+    
+    /* pc */
+    thead th {
+        height: 50px;
+        padding: 10px;
+        font-size: 17px;
+        font-weight: 500;
+        border-right: 1px solid #fff;
+        background-color: #E5EAE8;
+        text-align: center;
+    }
+    
+    thead th:nth-child(1){
+        min-width: calc(100% - 160px);
+    }
+    
+    thead th:nth-child(2),
+    thead th:nth-child(3){
+        min-width: 80px;
+    }
+    
+    tbody td {
+        padding: 10px;
+        line-height: 29px;
+        border-top: 1px solid #ebebeb;
+        border-right: 1px solid #ebebeb;
+        text-align: center;
+    }
+    
+    tbody td:last-child {
+        border-right: none;
+    }
+    
+    tbody td.borderRight {
+        border-right: 1px solid #ebebeb;
+    }
+
+
+    .table-moblie {
+        display: none;
+    }
+    
+    .table-pc {
+        display: block;
+        
+    }
+    thead th {
+        height: 50px;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        border-right: 1px solid #fff;
+        background-color: #E5EAE8;
+        text-align: center;
+    }
+
+    /* ================================ */
+    /* guide01 */
+    .guide01 .inner-box li {
+        padding-left: 60px;
+        line-height: 39px;
+        font-size: 16px;
+        color: #666;   
+    }
+    .guide01 .inner-box li::before {
+        left: 45px;
+    }
+
+    /* ================================ */
+    /* guide03 */
+    .guide03 .inner-box ul > li {
+        padding-left: 30px;
+    } 
+    
+
+    .guide03 .inner-box li::before {
+        left: 15px;
+    }
+
+
+    .guide06 tbody tr.active + tr.answer td {
+        /*tr, td에 dispaly:block을 주면 레이아웃이 깨짐*/
+        display: table-cell;
+        padding: 30px 60px;
+        background-color: #f9f9f9;
+    }
+
     .inner-box.top {
         display: flex;
     }
