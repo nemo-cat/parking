@@ -1,25 +1,60 @@
 $(document).ready(function(){
     /* 메인 슬라이드 */
-    let slideInterval = 3000; // 슬라이드 속도 : 메인슬라이드, 배너슬라이드
+    let slideInterval = 2000; // 슬라이드 속도 : 메인슬라이드, 배너슬라이드
 
     let mainSlideIndex = 0;
     let mainSlideCount = $('.slider-list li').length;
+    
+   $('.slider-list li').eq(0).appendTo('.slider-list');
     let windowWidth = $(window).width();
     let isPlaying = true; // 슬라이드 재생 여부를 나타내는 변수
     let mainSlideInterval = setInterval(mainSlide, slideInterval);
+
     
     //메인 슬라이드 함수
     function mainSlide()
     {
+        /*
+        마지막슬라이드 -> 첫번째 슬라이드를 자연스럽게 연결되도록 하고싶은데,
+        위에 메인슬라이드에 썼던 나머지값을 구해서 index로 쓰면, 마지막 슬라이드에서 index값이 무조건 0이되기때문에
+        여기서는 인덱스++를 사용함
+        */
+        mainSlideIndex++;
+
         if (isPlaying)
         {
-            /*
+            if( mainSlideIndex == mainSlideCount)
+            {
+                
+                moveMainSlide(windowWidth * mainSlideIndex,0);
+                $('.slider-list').animate({ left: 0 }, 0);
+                $('.slider-btn span').eq(0).addClass('active');
+                mainSlideIndex = 0;
+            }
+            else
+            {
+                moveMainSlide(windowWidth * mainSlideIndex, mainSlideIndex);
+            }
+        }
+    }
+
+    // 배너를 이동시키는 함수
+    function moveMainSlide(leftPosition, index)
+    {
+        $('.slider-list').animate({ left: -leftPosition + "px" }, 300);
+        mainSlideBtn(index);
+    }
+
+  /*   function mainSlide()
+    {
+        if (isPlaying)
+        {
+            //
                ( 현재 슬라이드 인덱스 + 1 ) % 전체 슬라이드갯수 로 하면,
                마지막 슬라이드 일때 나머지 값이 0 이기 때문에 자동으로 첫번째 슬라이드가 나옴
             
                현재 슬라이드 인덱스++로 쓰면, if문을 통해서 현재 슬라이드 인덱스 == 전체 슬라이드 갯수 일때를 처리해줘야해서
                더 유용해보인다(?)
-            */
             mainSlideIndex = (mainSlideIndex + 1) % mainSlideCount;
             moveMainSlide(windowWidth * mainSlideIndex, mainSlideIndex);
         }
@@ -31,16 +66,16 @@ $(document).ready(function(){
         $('.slider-list').animate({ left: -leftPosition + "px" }, 300);
         mainSlideBtn(index);
     }
-    
+     */
     // 슬라이드 버튼에 class를 주는 함수
     function mainSlideBtn(index)
     {
-        $('.slider-btn li').removeClass('active');
-        $('.slider-btn li').eq(index).addClass('active');
+        $('.slider-btn span').removeClass('active');
+        $('.slider-btn span').eq(index).addClass('active');
     }
     
     // 슬라이드 버튼 클릭시, 해당 슬라이드가 보이게함
-    $('.slider-btn li').click(function()
+    $('.slider-btn span').click(function()
     {
         let clickIdx = $(this).index();
         //setinterval초기화
@@ -234,6 +269,24 @@ $(document).ready(function(){
         bannerSlideInterval = setInterval(bannerSlide, slideInterval);
     }
 
+    /* 서브페이지 */
+    $('.answer').hide();
+
+    // 질문(.question) 클릭 이벤트 처리
+    $('.question').click(function() {
+        // 모든 질문과 답변의 활성 클래스 제거 및 모든 답변 숨기기
+        $('.question').removeClass('active');
+        $('.answer').slideUp(300);
+
+        // 클릭된 질문에 활성 클래스 추가
+        $(this).addClass('active');
+
+        // 클릭된 질문의 다음 요소인 답변을 슬라이드 다운
+        $(this).next('.answer').slideDown(300);
+    });
+
+
+
     $(window).resize(function()
     { 
         console.log('resize!');
@@ -263,6 +316,7 @@ $(document).ready(function(){
             /* header */
             $('#menuBtn').click(function()
             {
+                
                 // 요소 초기화
                 $('.sub-menu').hide();
                 $('.main-menu > li').removeClass('active');

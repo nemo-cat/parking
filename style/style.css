@@ -8,20 +8,28 @@
 
 .slider-list {
     display: flex;
-    width: 300%;
+    width: 400%;
     height: 100%;
     position: relative;
     left: 0;
-    background-color: rgb(248, 248, 189);
 }
 
 .slider-list li {
-    width: calc(100% / 3);
+    width: calc(100% / 4);
     height: 100%;
 }
 
-.slider-list li:nth-child(odd){
-    background-color: bisque;
+.slider-list li:nth-child(1),
+.slider-list li:nth-child(4){
+    background: url(../images/slide/slide01.png) no-repeat center;
+}
+
+.slider-list li:nth-child(2){
+    background: url(../images/slide/slide02.png) no-repeat center;
+}
+
+.slider-list li:nth-child(3){
+    background: url(../images/slide/slide03.png) no-repeat center;
 }
 
 .slider-btn {
@@ -33,7 +41,8 @@
     transform: translateX(-50%);
 }
 
-.slider-btn li {
+.slider-btn span {
+    display: block;
     width: 20px;
     height: 10px;
     margin: 0 5px;
@@ -42,11 +51,11 @@
     transition: all 0.5s;
 }
 
-.slider-btn li:hover {
+.slider-btn span:hover {
     background-color: #E5EAE8;
 }
 
-.slider-btn li.active {
+.slider-btn span.active {
     width: 40px;
     background-color: #227C39;
 }
@@ -64,6 +73,39 @@
 .slider-btn button.stop {
     background: url(../images/btn-play.png) no-repeat center #fff;
 }
+
+/* .slider-btn li {
+    width: 20px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 100px;
+    background-color: #fff;
+    transition: all 0.5s;
+}
+
+.slider-btn li:hover {
+    background-color: #E5EAE8;
+}
+
+.slider-btn li.active {
+    width: 40px;
+    background-color: #227C39;
+}
+
+.slider-btn #playStopBtn {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
+
+.slider-btn #playStopBtn.play {
+    background: url(../images/btn-stop.png) no-repeat center #fff;
+}
+
+.slider-btn #playStopBtn.stop {
+    background: url(../images/btn-play.png) no-repeat center #fff;
+} */
 
 
 /* 자주 찾는 서비스 */
@@ -464,7 +506,6 @@
     /* 슬라이더 */
     .slider {
         height: 450px;
-        background-color: yellow;
     }
     
     
@@ -599,7 +640,7 @@
         display: grid;
         grid-template-columns: repeat(8, 1fr);
         column-gap: 10px;
-        row-gap: none;
+        row-gap: 0;
     }
     
     
@@ -641,11 +682,6 @@
 }
 
 @media all and (min-width: 1280px) {
-    /* 슬라이더 */
-    .slider {
-        background-color: none;
-    }
-
     /* 자주 찾는 서비스 */
 
     .quick-menu {

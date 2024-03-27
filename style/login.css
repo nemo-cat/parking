@@ -31,7 +31,10 @@ section div input::placeholder {
     color: #999;
 }
 
-section button {
+section .loginBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     align-self: center;
     width: 200px;
     height: 50px;

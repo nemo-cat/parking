@@ -276,7 +276,26 @@ nav li a {
     display: block;
 }
 
-.main-menu > li > a {
+nav .main-menu {
+    background-color: #fff;
+}
+
+.main-menu > li{
+    padding: 0 10px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid #ebebeb;
+    background: url(../images/ico_Down.png) no-repeat center right 10px;
+    cursor: pointer;
+}
+
+.main-menu > li.active{
+    color: #227C39;
+    background: url(../images/ico_Up.png) no-repeat center right 10px;
+}
+
+/* .main-menu > li > a {
     padding: 0 10px;
     line-height: 50px;
     font-size: 18px;
@@ -289,11 +308,12 @@ nav li a {
     color: #227C39;
     background: url(../images/ico_Up.png) no-repeat center right 10px;
 }
-
+ */
 .sub-menu li a {
     line-height: 45px;
     padding: 0 0 0 20px;
     font-size: 16px;
+    color: #333;
 }
 
 .sub-menu li:last-child a {
