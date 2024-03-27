@@ -127,12 +127,8 @@ tbody td.borderRight {
     left: 5px;
 }
 
-.discountInfo th:nth-child(1){
-    width: 20%;
-}
-
-.discountInfo th:nth-child(2){
-    width: 15%;
+main table .width-70 {
+    min-width: 70px;
 }
 
 .discountInfo td:last-child {
@@ -141,9 +137,12 @@ tbody td.borderRight {
 
 /* ================================ */
 /* guide03 */
-
 .guide03 .guide-tit-02 {
     padding-left: 0;
+}
+
+.guide03 tbody td {
+    padding: 5px;
 }
 
 .guide03 .inner-box table li {

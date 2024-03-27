@@ -1,283 +1,305 @@
 $(document).ready(function(){
-    /*
-        해야할것
+    /* 메인 슬라이드 */
+    let slideInterval = 3000; // 슬라이드 속도 : 메인슬라이드, 배너슬라이드
 
-        (OK)1. header-nav slide down & up
-        2. 메인슬라이드
-         2-1. 슬라이드 interval
-         2-2. 슬라이드 버튼 click
-         2-3. 슬라이드 멈춤 & 재생
-        3. quick-menu scroll (모바일에서만)
-        (OK)4. 공지사항 tab-menu
-    */
-   
-        /* header */
-        $('#menuBtn').click(function()
-        {
-            resetNav();
-            $('nav').stop().slideToggle();
-            $('.moblie-nav-bg').toggleClass('active');
-
-
-            let isActive = $('.moblie-nav-bg').hasClass('active');    
-            if(isActive == true)
-            {
-                $('body').css('overflow', 'hidden');
-            }
-            else
-            {
-                $('body').css('overflow', 'visible');
-            }
-        })
-
-        $('.main-menu > li').click(function()
-        {
-            resetNav();
-            $(this).toggleClass('active');
-            $(this).children('.sub-menu').stop().slideToggle();
-        })
-
- 
-
-        //header 클릭요소 초기화
-        function resetNav()
-        {
-            $('.main-menu > li').removeClass('active');
-            $('.sub-menu').hide();
-        }
-
-        /* 슬라이더 */
-        let slidewidth = $(window).width();
-        let moveLeft = 0;
-        let slideLiCount = $('.slider-list li').length;
-        let slideIndex = 0;
-        let slideInterval;
+    let mainSlideIndex = 0;
+    let mainSlideCount = $('.slider-list li').length;
+    let windowWidth = $(window).width();
+    let isPlaying = true; // 슬라이드 재생 여부를 나타내는 변수
+    let mainSlideInterval = setInterval(mainSlide, slideInterval);
     
-        // 초기 슬라이드 실행
-        startSlide();
-    
-        // 슬라이드 시작 함수
-        function startSlide()
+    //메인 슬라이드 함수
+    function mainSlide()
+    {
+        if (isPlaying)
         {
-            slideInterval = setInterval(function()
-            {
-                mainSlide(slidewidth);
-            }, 3000);
-        }
-    
-        // 메인 슬라이드 함수
-        function mainSlide(slidewidth)
-        {
-            if (slideIndex < slideLiCount - 1)
-            {
-                moveLeft -= slidewidth;
-                $('.slider-list').stop().animate({left: moveLeft}, 500);
-                slideIndex++;
-            }
-            else
-            {
-                $('.slider-list').stop().animate({left: 0}, 500);
-                moveLeft = 0;
-                slideIndex = 0;
-            }
-            mainSlideBtn(slideIndex);
-        }
-    
-        // 슬라이드 버튼 함수
-        function mainSlideBtn(slideIndex)
-        {
-            $('.slider-btn li').removeClass('active');
-            $('.slider-btn li').eq(slideIndex).addClass('active');
-        }
-    
-        // 슬라이드 버튼 클릭 이벤트
-        $('.slider-btn li').click(function()
-        {
-            let btnIndex = $(this).index();
-            $('.slider-btn li').removeClass('active');
-            $('.slider-btn li').eq(btnIndex).addClass('active');
-            $('.slider-btn button').attr('class', 'play');
-            moveSlide(btnIndex);
-        });
-    
-        // 슬라이드 이동 함수
-        function moveSlide(btnIndex)
-        {
-            clearInterval(slideInterval);
-            let slidePosition = -btnIndex * slidewidth;
-            $('.slider-list').stop().animate({left: slidePosition}, 500);
-            slideIndex = btnIndex;
-            startSlide();
-        }
-    
-        // 슬라이드 멈춤, 재생 버튼 클릭 이벤트
-        $('.slider-btn button').click(function()
-        {
-            let isStop = $(this).hasClass('play');
-            if (isStop)
-            {
-                // 슬라이드 멈춤
-                clearInterval(slideInterval);
-                $(this).attr('class', 'stop');
-            }
-            else
-            {
-                // 슬라이드 재생
-                startSlide();
-                $(this).attr('class', 'play');
-            }
-        });
-
-
-        /* 일정,공지사항 탭메뉴 */
-        $('.tab-header li').click(function()
-        {
-            $('.tab-header li').removeClass('active');
-            $(this).addClass('active');
-
-            let index = $(this).index();
-            console.log(index);
-            $('.tab-bottom ul').hide();
-            $('.tab-bottom ul').eq(index).show();
-        })
-
-        /* 배너 슬라이드 */
-        let bannerwidth = parseFloat($('.banner-list li').css('width')) + 20;
-        console.log(bannerwidth);
-        let bannerLeft = 0;
-        let bannerLiCount = $('.banner-list li').length;
-        let bannerIndex = 0;
-        let bannerInterval;
-    
-        // 초기 슬라이드 실행
-        startBannerSlide();
-    
-        // 슬라이드 시작 함수
-        function startBannerSlide()
-        {
-            bannerInterval = setInterval(function()
-            {
-                bannerSlide(bannerwidth);
-            }, 3000);
-        }
-    
-        // 메인 슬라이드 함수
-        function bannerSlide(bannerwidth)
-        {
-            if (bannerIndex < bannerLiCount - 1)
-            {
-                bannerLeft -= bannerwidth;
-                $('.banner-list').stop().animate({left: bannerLeft}, 500);
-                bannerIndex++;
-            }
-            else
-            {
-                $('.banner-list').stop().animate({left: 0}, 500);
-                bannerLeft = 0;
-                bannerIndex = 0;
-            }
-        }
-
-        /* 터치이벤트 */
-        let touchStartX = 0;// 터치 시작 좌표를 저장하는 변수
-        let touchEndX = 0;// 터치 끝 좌표를 저장하는 변수
-        let touchDiff = 0;// 터치 이동 거리를 저장하는 변수
-    
-         // 터치 시작 이벤트 처리
-        $('.banner-inner li').on('touchstart', function(event)
-        {
-            touchStartX = event.touches[0].clientX;
-        });
-    
-        // 터치 이동 이벤트 처리
-        $('.banner-inner li').on('touchmove', function(event)
-        {
-            touchEndX = event.touches[0].clientX;
-            touchDiff = touchStartX - touchEndX;
-        });
-    
-        // 터치 끝 이벤트 처리
-        $('.banner-list li').on('touchend', function(event)
-        {
-            if (touchDiff > 50)
-            {
-                // 오른쪽으로 터치하면 다음 슬라이드를 보여줌
-                bannerIndex++;
-                if (bannerIndex >= bannerLiCount)
-                {
-                    bannerIndex = 0;
-                }
-            }
-            else if (touchDiff < -50)
-            {
-                // 왼쪽으로 터치하면 이전 슬라이드를 보여줌
-                bannerIndex--;
-                if (bannerIndex < 0)
-                {
-                    bannerIndex = bannerLiCount - 1;
-                }
-            }
-        
-            // 터치로 인한 슬라이드 변경 후 처리
-            clearInterval(bannerInterval);
-            bannerInterval = setInterval(function()
-            {
-                bannerSlide(bannerwidth);
-            }, 3000);
+            /*
+               ( 현재 슬라이드 인덱스 + 1 ) % 전체 슬라이드갯수 로 하면,
+               마지막 슬라이드 일때 나머지 값이 0 이기 때문에 자동으로 첫번째 슬라이드가 나옴
             
-            let bannerPosition = bannerIndex * bannerwidth;
-             $('.banner-list').stop().animate({left: bannerPosition}, 500);
+               현재 슬라이드 인덱스++로 쓰면, if문을 통해서 현재 슬라이드 인덱스 == 전체 슬라이드 갯수 일때를 처리해줘야해서
+               더 유용해보인다(?)
+            */
+            mainSlideIndex = (mainSlideIndex + 1) % mainSlideCount;
+            moveMainSlide(windowWidth * mainSlideIndex, mainSlideIndex);
+        }
+    }
+    
+    // 슬라이드를 왼쪽으로 이동시키는 함수
+    function moveMainSlide(leftPosition, index)
+    {
+        $('.slider-list').animate({ left: -leftPosition + "px" }, 300);
+        mainSlideBtn(index);
+    }
+    
+    // 슬라이드 버튼에 class를 주는 함수
+    function mainSlideBtn(index)
+    {
+        $('.slider-btn li').removeClass('active');
+        $('.slider-btn li').eq(index).addClass('active');
+    }
+    
+    // 슬라이드 버튼 클릭시, 해당 슬라이드가 보이게함
+    $('.slider-btn li').click(function()
+    {
+        let clickIdx = $(this).index();
+        //setinterval초기화
+        clearInterval(mainSlideInterval);
+        mainSlideInterval = setInterval(mainSlide, slideInterval);
+
+        //클릭한 li기준으로 슬라이드
+        moveMainSlide(windowWidth * clickIdx, clickIdx);
+        mainSlideIndex = clickIdx;
+
+        //만약에 슬라이드가 stop일 경우, slider-btn을 누르면 다시 play되게함
+        isPlaying = true;
+        $('.slider-btn button').removeClass('stop').addClass('play');
+    });
+    
+    // 슬라이드 플레이/스탑
+    $('.slider-btn button').click(function()
+    {
+        if ($(this).hasClass('play'))
+        {
+            //슬라이드 stop
+            $(this).removeClass('play').addClass('stop');
+            isPlaying = false;
+        }
+        else
+        {
+            //슬라이드 play
+            $(this).removeClass('stop').addClass('play');
+            isPlaying = true;
+        }
+    });
+
+     // 슬라이드에 마우스 올리면 슬라이드정지
+     $('.slider').mouseenter(function()
+     {
+         clearInterval(mainSlideInterval);
+     })
+ 
+     // 슬라이드에 마우스가 떠나면 다시 슬라이드 재개
+     $('.slider').mouseleave(function()
+     {
+        mainSlideInterval = setInterval(mainSlide, slideInterval);
+     });
+
+    // 터치 슬라이드 기능 추가
+    let touchstartX = 0; //터치가 시작되는 x좌표 저장
+    let touchendX = 0; //터치가 끝나는 x좌표 저장
+
+    $('.slider-list').on('touchstart', function(event)
+    {
+        touchstartX = event.changedTouches[0].screenX;
+    });
+
+    $('.slider-list').on('touchend', function(event)
+    {
+        touchendX = event.changedTouches[0].screenX;
+        touchMainSlide();
+    });
+
+    function touchMainSlide()
+    {
+        if (touchendX < touchstartX)
+        {
+            //다음 슬라이드로 이동
+            mainSlide();
+        }
+        else if (touchendX > touchstartX)
+        {
+            //이전 슬라이드로 이동
+            mainSlideIndex = (mainSlideIndex - 1 + mainSlideCount) % mainSlideCount;
+            moveMainSlide(windowWidth * mainSlideIndex, mainSlideIndex);
+        }
+
+        //setinterval초기화
+        clearInterval(mainSlideInterval);
+        mainSlideInterval = setInterval(mainSlide, slideInterval);
+        //만약에 슬라이드가 stop일 경우, 터치슬라이드가 되면 다시 play되게함
+        isPlaying = true;
+        $('.slider-btn button').removeClass('stop').addClass('play');
+    }
+
+
+    /* 일정정보, 공지사항 tab-menu */
+    $('.tab-header > li').click(function()
+    {
+        $('.tab-header > li').removeClass('active');
+        $(this).addClass('active');
+
+        let thisIdx = $(this).index();
+        $('.tab-bottom ul').hide();
+        $('.tab-bottom ul').eq(thisIdx).show();
+    })
+
+    $('#gotoNotice').click(function()
+    {
+        window.location.href = 'guide07.html';
+    })
+
+
+    /* 배너영역 슬라이드 */
+    let bannerSlideIndex = 0;
+    let bannerSlideCount = $('.banner-list li').length;
+    let bannerWidth = parseFloat($('.banner-list li').css('width')) + 20;
+    let bannerSlideInterval = setInterval(bannerSlide, slideInterval);
+
+    // 마지막 배너가 슬라이드되면 첫 번째 배너로 자연스럽게 이동하도록 클론 추가
+    $('.banner-list li').eq(0).clone().appendTo('.banner-list');
+    $('.banner-list li').eq(1).clone().appendTo('.banner-list');
+
+    // 배너 슬라이드 함수
+    function bannerSlide()
+    {
+        /*
+        마지막슬라이드 -> 첫번째 슬라이드를 자연스럽게 연결되도록 하고싶은데,
+        위에 메인슬라이드에 썼던 나머지값을 구해서 index로 쓰면, 마지막 슬라이드에서 index값이 무조건 0이되기때문에
+        여기서는 인덱스++를 사용함
+        */
+        bannerSlideIndex++;
+
+        // 마지막 슬라이드면 다음코드 실행.
+        if (bannerSlideIndex == bannerSlideCount)
+        {
+            moveBannerSlide(-bannerWidth * bannerSlideIndex);
+            $('.banner-list').animate({ left: 0 }, 0);
+            bannerSlideIndex = 0;
+        }
+        else
+        {
+            moveBannerSlide(-bannerWidth * bannerSlideIndex);
+        }
+    }
+
+    // 배너를 이동시키는 함수
+    function moveBannerSlide(leftPosition)
+    {
+        $('.banner-list').animate({ left: leftPosition }, 300);
+    }
+
+    // 배너에 마우스 올리면 슬라이드정지
+    $('.banner').mouseenter(function()
+    {
+        clearInterval(bannerSlideInterval);
+    })
+
+    // 배너에 마우스가 떠나면 다시 슬라이드 재개
+    $('.banner').mouseleave(function()
+    {
+        bannerSlideInterval = setInterval(bannerSlide, slideInterval);
+    });
+
+    // 배너 터치슬라이드
+    let bannerTouchstartX = 0; //터치가 시작되는 x좌표 저장
+    let bannerTouchendX = 0; //터치가 끝나는 x좌표 저장
+
+    $('.banner-list').on('touchstart', function(event)
+    {
+        touchstartX = event.changedTouches[0].screenX;
+    });
+
+    $('.banner-list').on('touchend', function(event)
+    {
+        touchendX = event.changedTouches[0].screenX;
+        touchBannerSlide();
+    });
+
+    function touchBannerSlide()
+    {
+        if (touchendX < touchstartX)
+        {
+            //다음 슬라이드로 이동
+            bannerSlide();
+        }
+        else if (touchendX > touchstartX)
+        {
+            //이전 슬라이드로 이동
+            bannerSlideIndex = bannerSlideIndex - 1;
+            if (bannerSlideIndex < 0)
+            {
+                // 첫번째 슬라이드면, 마지막 슬라이드로 이동
+                bannerSlideIndex = bannerSlideCount - 1;
+                moveBannerSlide(-bannerWidth * bannerSlideIndex);
+            }
+            else
+            {
+                moveBannerSlide(-bannerWidth * bannerSlideIndex);
+            }
+        }
+
+        //setinterval초기화
+        clearInterval(bannerSlideInterval);
+        bannerSlideInterval = setInterval(bannerSlide, slideInterval);
+    }
+
+    $(window).resize(function()
+    { 
+        console.log('resize!');
+        windowWidth = $(window).width();
+        //setinterval초기화
+        clearInterval(mainSlideInterval);
+        mainSlideInterval = setInterval(mainSlide, slideInterval);
+
         
-            // 초기화
-            touchStartX = 0;
-            touchEndX = 0;
-            touchDiff = 0;
-        });
-    
-         // 창 크기 변경 이벤트
-         $(window).resize(function()
-         {
-             $('nav').css('display', 'none');
-             $('.moblie-nav-bg').removeClass('active');
-             $('body').css('overflow', 'visible');
-     
-             /* 슬라이드 재설정*/
-             slidewidth = $(window).width();
-             clearInterval(slideInterval);
-             let slidePosition = slideIndex * slidewidth;
-             $('.slider-list').stop().animate({left: -slidePosition}, 500);
-             startBannerSlide();
+        bannerWidth = parseFloat($('.banner-list li').css('width')) + 20;
+        clearInterval(bannerSlideInterval)
+        bannerSlideInterval = setInterval(bannerSlide, slideInterval);
 
-             /* 배너 재설정 */
-             bannerwidth = parseFloat($('.banner-list li').css('width')) + 20;
-             clearInterval(bannerInterval);
-             let bannerPosition = bannerIndex * bannerwidth;
-             $('.banner-list').stop().animate({left: bannerPosition}, 500);
-             startSlide();
-     
-             if ($(window).width() >= 1280) {
-                 // pc버전
-                 $('nav').css('display', 'block');
-                 $('.sub-menu').hide();
-     
-                 $('.main-menu').mouseenter(function() {
-                     $('.sub-menu').stop().slideDown();
-                     $('.nav-bg').stop().slideDown();
-                     $('.nav-line').show();
-                 });
-     
-                 $('nav').mouseleave(function() {
-                     $('.sub-menu').stop().slideUp();
-                     $('.nav-bg').stop().slideUp();
-                     $('.nav-line').hide();
-                 });
-             } else if ($(window).width() >= 768) {
-                 // 태블릿버전
-             }
-         });
-     
-    
+        if (window.innerWidth < 768)
+        {
+            // quick메뉴 가로 스크롤
+            $('.quick-inner').on('mousewheel',function(event)
+            {
+                this.scrollLeft -= (event.originalEvent.wheelDelta / 2);
+                event.preventDefault(); // 브라우저 스크롤 방지
+            });
+        }
+        else if (window.innerWidth < 1280)
+        {
+            //디바이스 크기가 768px 미만일때
+        
+            /* header */
+            $('#menuBtn').click(function()
+            {
+                // 요소 초기화
+                $('.sub-menu').hide();
+                $('.main-menu > li').removeClass('active');
 
-      
-                
+                $('nav').stop().slideToggle();
+                $('.moblie-nav-bg').toggleClass('active');
+            })
+
+            $('.main-menu > li').click(function()
+            {
+                $(this).siblings().removeClass('active');
+                $(this).toggleClass('active');  
+
+                $('.sub-menu').stop().slideUp();
+                $(this).children('.sub-menu').stop().slideToggle();
+            })
+        }
+        else if ( window.innerWidth >= 1280 )
+        {
+            //디바이스 크기가 1024px 미만일때
+            
+            $('.moblie-nav-bg').removeClass('active');
+
+            $('.main-menu').mouseenter(function()
+            {
+                $('.sub-menu').stop().slideDown();
+                $('.nav-bg').stop().slideDown();
+                $('.nav-line').show();
+            })
+
+            $('nav').mouseleave(function()
+            {
+                $('.sub-menu').stop().slideUp();
+                $('.nav-bg').stop().slideUp();
+                $('.nav-line').hide();
+            })
+        }
+    
+    }).resize(); 
 });
