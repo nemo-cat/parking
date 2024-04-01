@@ -1,7 +1,6 @@
 $(document).ready(function(){
     /* 메인 슬라이드 */
     let slideInterval = 2000; // 슬라이드 속도 : 메인슬라이드, 배너슬라이드
-
     let mainSlideIndex = 0;
     let mainSlideCount = $('.slider-list li').length;
     
@@ -10,7 +9,6 @@ $(document).ready(function(){
     let isPlaying = true; // 슬라이드 재생 여부를 나타내는 변수
     let mainSlideInterval = setInterval(mainSlide, slideInterval);
 
-    
     //메인 슬라이드 함수
     function mainSlide()
     {
@@ -26,7 +24,7 @@ $(document).ready(function(){
             if( mainSlideIndex == mainSlideCount)
             {
                 
-                moveMainSlide(windowWidth * mainSlideIndex,0);
+                moveMainSlide(windowWidth * mainSlideIndex, 0);
                 $('.slider-list').animate({ left: 0 }, 0);
                 $('.slider-btn span').eq(0).addClass('active');
                 mainSlideIndex = 0;
@@ -39,34 +37,13 @@ $(document).ready(function(){
     }
 
     // 배너를 이동시키는 함수
-    function moveMainSlide(leftPosition, index)
+    function moveMainSlide(leftPosition, index, time = 300)
     {
-        $('.slider-list').animate({ left: -leftPosition + "px" }, 300);
+        $('.slider-list').animate({ left: -leftPosition + "px" }, time);
         mainSlideBtn(index);
     }
 
-  /*   function mainSlide()
-    {
-        if (isPlaying)
-        {
-            //
-               ( 현재 슬라이드 인덱스 + 1 ) % 전체 슬라이드갯수 로 하면,
-               마지막 슬라이드 일때 나머지 값이 0 이기 때문에 자동으로 첫번째 슬라이드가 나옴
-            
-               현재 슬라이드 인덱스++로 쓰면, if문을 통해서 현재 슬라이드 인덱스 == 전체 슬라이드 갯수 일때를 처리해줘야해서
-               더 유용해보인다(?)
-            mainSlideIndex = (mainSlideIndex + 1) % mainSlideCount;
-            moveMainSlide(windowWidth * mainSlideIndex, mainSlideIndex);
-        }
-    }
-    
-    // 슬라이드를 왼쪽으로 이동시키는 함수
-    function moveMainSlide(leftPosition, index)
-    {
-        $('.slider-list').animate({ left: -leftPosition + "px" }, 300);
-        mainSlideBtn(index);
-    }
-     */
+
     // 슬라이드 버튼에 class를 주는 함수
     function mainSlideBtn(index)
     {
@@ -127,6 +104,7 @@ $(document).ready(function(){
     $('.slider-list').on('touchstart', function(event)
     {
         touchstartX = event.changedTouches[0].screenX;
+        
     });
 
     $('.slider-list').on('touchend', function(event)
@@ -199,7 +177,7 @@ $(document).ready(function(){
         if (bannerSlideIndex == bannerSlideCount)
         {
             moveBannerSlide(-bannerWidth * bannerSlideIndex);
-            $('.banner-list').animate({ left: 0 }, 0);
+            moveBannerSlide(0 , 0);
             bannerSlideIndex = 0;
         }
         else
@@ -209,9 +187,9 @@ $(document).ready(function(){
     }
 
     // 배너를 이동시키는 함수
-    function moveBannerSlide(leftPosition)
+    function moveBannerSlide(leftPosition, time = 300)
     {
-        $('.banner-list').animate({ left: leftPosition }, 300);
+        $('.banner-list').animate({ left: leftPosition }, time);
     }
 
     // 배너에 마우스 올리면 슬라이드정지
@@ -269,91 +247,127 @@ $(document).ready(function(){
         bannerSlideInterval = setInterval(bannerSlide, slideInterval);
     }
 
-    /* 서브페이지 */
-    $('.answer').hide();
-
-    // 질문(.question) 클릭 이벤트 처리
-    $('.question').click(function() {
-        // 모든 질문과 답변의 활성 클래스 제거 및 모든 답변 숨기기
-        $('.question').removeClass('active');
-        $('.answer').slideUp(300);
-
-        // 클릭된 질문에 활성 클래스 추가
-        $(this).addClass('active');
-
-        // 클릭된 질문의 다음 요소인 답변을 슬라이드 다운
-        $(this).next('.answer').slideDown(300);
-    });
 
 
+    /* header */
+    resetMenu()
+    mobileMenu()
+    pcMenu()
+
+    //nav 초기화
+    function resetMenu()
+    {
+        //pc관련 nav 초기화
+        $('#pcNav .sub-menu').hide();
+        $('.nav-bg').hide();
+        $('.nav-line').hide();
+
+        //모바일, 태블릿 관련 nav 초기화
+        $('#mobileNav').hide();
+        $('.mobile-nav-bg').removeClass('active');
+        $('#mobileNav .main-menu > li.active').removeClass('active');
+        $('#mobileNav .sub-menu').hide();
+        $('#mobileNav .main-menu > li.active').children('.sub-menu').hide();
+        $('#mobileNav .main-menu > li.active').removeClass('active');
+
+    }
+
+    //pc버전 nav메뉴
+    function pcMenu()
+    {
+        $('.mobile-nav-bg').removeClass('active');
+
+        //pcNav의 main-menu에 마우스를올리면, sub-menu, nav-bg, nav-line이 나타남
+        $('#pcNav .main-menu').mouseenter(function()
+        {
+            $('#pcNav .sub-menu').stop().slideDown();
+            $('.nav-bg').stop().slideDown();
+            $('.nav-line').show();
+        })
+
+        //pcNav에서 마우스가 떠나면, sub-menu, nav-bg, nav-line이 사라짐
+        $('#pcNav').mouseleave(function()
+        {
+            $('#pcNav .sub-menu').stop().slideUp();
+            $('.nav-bg').stop().slideUp();
+            $('.nav-line').hide();
+        })
+    }
+
+    // 태블릿, 모바일버전 nav메뉴
+    function mobileMenu()
+    {
+        //menuBtn 누르면 다음 실행
+        $('#menuBtn').click(function()
+        {
+            // main-menu li에 active가 달려있으면 active삭제하고, sub-menu를 숨김
+            $('#mobileNav .main-menu > li.active').removeClass('active');
+            $('#mobileNav .sub-menu').hide();
+    
+            // mobileNav와 bg를 slideToggle시킴.
+            $('#mobileNav').stop().slideToggle();
+            $('.mobile-nav-bg').toggleClass('active');
+        })
+    
+        //main-menu의 li클릭시
+        $('#mobileNav .main-menu > li').click(function()
+        {
+            // li클릭할때마다 true로 초기화
+            let isActive = true;
+    
+            // this에 active가 있으면, false로 바꿔서 if(isActive)가 실행 안되도록함
+            if( $(this).hasClass('active') )
+            { 
+                isActive = false;
+            }
+    
+            // 현재 클릭한 li 외의 다른 active가 달린 li의 sub-menu를 접고, class active를 삭제함
+            $('#mobileNav .main-menu > li.active').children('.sub-menu').stop().slideUp();
+            $('#mobileNav .main-menu > li.active').removeClass('active');
+            
+            // this에 class active주고 sub-menu slidedown시킴
+            if(isActive)
+            {
+                $(this).addClass('active');  
+                $(this).children('.sub-menu').stop().slideDown();
+            }
+        })
+    }
 
     $(window).resize(function()
     { 
-        console.log('resize!');
-        windowWidth = $(window).width();
-        //setinterval초기화
-        clearInterval(mainSlideInterval);
-        mainSlideInterval = setInterval(mainSlide, slideInterval);
-
-        
-        bannerWidth = parseFloat($('.banner-list li').css('width')) + 20;
-        clearInterval(bannerSlideInterval)
-        bannerSlideInterval = setInterval(bannerSlide, slideInterval);
-
-        if (window.innerWidth < 768)
-        {
-            // quick메뉴 가로 스크롤
-            $('.quick-inner').on('mousewheel',function(event)
-            {
-                this.scrollLeft -= (event.originalEvent.wheelDelta / 2);
-                event.preventDefault(); // 브라우저 스크롤 방지
-            });
-        }
-        else if (window.innerWidth < 1280)
-        {
-            //디바이스 크기가 768px 미만일때
-        
-            /* header */
-            $('#menuBtn').click(function()
-            {
-                
-                // 요소 초기화
-                $('.sub-menu').hide();
-                $('.main-menu > li').removeClass('active');
-
-                $('nav').stop().slideToggle();
-                $('.moblie-nav-bg').toggleClass('active');
-            })
-
-            $('.main-menu > li').click(function()
-            {
-                $(this).siblings().removeClass('active');
-                $(this).toggleClass('active');  
-
-                $('.sub-menu').stop().slideUp();
-                $(this).children('.sub-menu').stop().slideToggle();
-            })
-        }
-        else if ( window.innerWidth >= 1280 )
-        {
-            //디바이스 크기가 1024px 미만일때
+        setTimeout(()=>{
+            console.log('resize!');
+            windowWidth = $(window).width();
             
-            $('.moblie-nav-bg').removeClass('active');
+            moveMainSlide(windowWidth * mainSlideIndex, mainSlideIndex ,0);
 
-            $('.main-menu').mouseenter(function()
-            {
-                $('.sub-menu').stop().slideDown();
-                $('.nav-bg').stop().slideDown();
-                $('.nav-line').show();
-            })
+            bannerWidth = parseFloat($('.banner-list li').css('width')) + 20;
+            //초기화 (영역에 맞도록 즉시 초기화)
+            moveBannerSlide(-bannerWidth * bannerSlideIndex, 0);
 
-            $('nav').mouseleave(function()
+            resetMenu();//Menu 초기화
+
+            if (window.innerWidth < 768)
             {
-                $('.sub-menu').stop().slideUp();
-                $('.nav-bg').stop().slideUp();
-                $('.nav-line').hide();
-            })
-        }
-    
+                // quick메뉴 가로 스크롤
+                $('.quick-inner').on('mousewheel',function(event)
+                {
+                    this.scrollLeft -= (event.originalEvent.wheelDelta / 2);
+                    event.preventDefault(); // 브라우저 스크롤 방지
+                });
+                
+            }
+
+            else if (window.innerWidth < 1280)
+            {
+                // quick메뉴 가로 스크롤 해제
+                $('.quick-inner').off('mousewheel');
+            }
+
+            else if ( window.innerWidth >= 1280 )
+            {
+            }
+        }, 100)
     }).resize(); 
 });

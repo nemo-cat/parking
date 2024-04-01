@@ -163,15 +163,15 @@ main table .width-70 {
     border-top: 1px solid #fff;
 }
 
-.guide04 .table-moblie table {
+.guide04 .table-mobile table {
     width: 100%;
 }
 
-.guide04 .table-moblie .width-70 {
+.guide04 .table-mobile .width-70 {
     min-width: 70px;
 }
 
-.guide04 .table-moblie .width-80 {
+.guide04 .table-mobile .width-80 {
     min-width: 80px;
 }
 
@@ -438,7 +438,7 @@ main table .width-70 {
     }
 
 
-    .table-moblie {
+    .table-mobile {
         display: none;
     }
     

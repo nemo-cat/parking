@@ -21,15 +21,15 @@
 
 .slider-list li:nth-child(1),
 .slider-list li:nth-child(4){
-    background: url(../images/slide/slide01.png) no-repeat center;
+    background: url(../images/slide/m-slide01.png) no-repeat center;
 }
 
 .slider-list li:nth-child(2){
-    background: url(../images/slide/slide02.png) no-repeat center;
+    background: url(../images/slide/m-slide02.png) no-repeat center;
 }
 
 .slider-list li:nth-child(3){
-    background: url(../images/slide/slide03.png) no-repeat center;
+    background: url(../images/slide/m-slide03.png) no-repeat center;
 }
 
 .slider-btn {
@@ -73,40 +73,6 @@
 .slider-btn button.stop {
     background: url(../images/btn-play.png) no-repeat center #fff;
 }
-
-/* .slider-btn li {
-    width: 20px;
-    height: 10px;
-    margin: 0 5px;
-    border-radius: 100px;
-    background-color: #fff;
-    transition: all 0.5s;
-}
-
-.slider-btn li:hover {
-    background-color: #E5EAE8;
-}
-
-.slider-btn li.active {
-    width: 40px;
-    background-color: #227C39;
-}
-
-.slider-btn #playStopBtn {
-    display: block;
-    width: 25px;
-    height: 25px;
-    border-radius: 100%;
-}
-
-.slider-btn #playStopBtn.play {
-    background: url(../images/btn-stop.png) no-repeat center #fff;
-}
-
-.slider-btn #playStopBtn.stop {
-    background: url(../images/btn-play.png) no-repeat center #fff;
-} */
-
 
 /* 자주 찾는 서비스 */
 .quick-inner {
@@ -160,89 +126,83 @@
     text-align: center;
 }
 
-.quick-menu li a .ico {
+/* .quick-menu li a .ico {
     width: 100%;
     height: 100%;
 }
+*/
+
+.quick-menu li a .ico {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
 .quick-menu li:nth-child(1) .ico {
-    background: url(../images/ico_quick01.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick01.png);
 }
 
 .quick-menu li:nth-child(1):hover .ico {
-    background: url(../images/ico_quick01_hover.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick01_hover.png);
 }
 
 .quick-menu li:nth-child(2) .ico {
-    background: url(../images/ico_quick02.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick02.png);
 }
 
 .quick-menu li:nth-child(2):hover .ico {
-    background: url(../images/ico_quick02_hover.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick02_hover.png);
 }
 
 .quick-menu li:nth-child(3) .ico {
-    background: url(../images/ico_quick03.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick03.png);
 }
 
 .quick-menu li:nth-child(3):hover .ico {
-    background: url(../images/ico_quick03_hover.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick03_hover.png);
 }
 
 .quick-menu li:nth-child(4) .ico {
-    background: url(../images/ico_quick04.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick04.png);
 }
 
 .quick-menu li:nth-child(4):hover .ico {
-    background: url(../images/ico_quick04_hover.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick04_hover.png);
 }
 
 .quick-menu li:nth-child(5) .ico {
-    background: url(../images/ico_quick05.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick05.png);
 }
 
 .quick-menu li:nth-child(5):hover .ico {
-    background: url(../images/ico_quick05_hover.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick05_hover.png);
 }
 
 .quick-menu li:nth-child(6) .ico {
-    background: url(../images/ico_quick06.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick06.png);
 }
 
 .quick-menu li:nth-child(6):hover .ico {
-    background: url(../images/ico_quick06_hover.png) no-repeat center;
-    background-size: contain;}
+    background-image: url(../images/ico_quick06_hover.png);
+}
 
 
 .quick-menu li:nth-child(7) .ico {
-    background: url(../images/ico_quick07.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick07.png);
 }
 
 .quick-menu li:nth-child(7):hover .ico {
-    background: url(../images/ico_quick07_hover.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick07_hover.png);
 }
 
 .quick-menu li:nth-child(8) .ico {
-    background: url(../images/ico_quick08.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick08.png);
 }
 
 .quick-menu li:nth-child(8):hover .ico {
-    background: url(../images/ico_quick08_hover.png) no-repeat center;
-    background-size: contain;
+    background-image: url(../images/ico_quick08_hover.png);
 }
 
 
@@ -507,6 +467,19 @@
     .slider {
         height: 450px;
     }
+
+    .slider-list li:nth-child(1),
+    .slider-list li:nth-child(4){
+        background: url(../images/slide/t-slide01.png) no-repeat center;
+    }
+
+    .slider-list li:nth-child(2){
+        background: url(../images/slide/slide02.png) no-repeat center;
+    }
+
+    .slider-list li:nth-child(3){
+        background: url(../images/slide/slide03.png) no-repeat center;
+    }
     
     
     
@@ -634,6 +607,13 @@
 }
 
 @media all and (min-width: 1024px){
+  /* 슬라이더 */
+  .slider-list li:nth-child(1),
+  .slider-list li:nth-child(4){
+      background: url(../images/slide/slide01.png) no-repeat center left;
+  }
+
+
     /* 자주 찾는 서비스 */
     .quick ul {
         width: 100%;
@@ -682,6 +662,13 @@
 }
 
 @media all and (min-width: 1280px) {
+    
+    /* 슬라이더 */
+    .slider-list li:nth-child(1),
+    .slider-list li:nth-child(4){
+        background: url(../images/slide/slide01.png) no-repeat center;
+    }
+
     /* 자주 찾는 서비스 */
 
     .quick-menu {

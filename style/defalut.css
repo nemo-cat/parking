@@ -190,12 +190,69 @@ legend,
 }
 
 /* Index 페이지 공통 Stlye */
+html {
+    height: 100%;
+    overflow:auto;
+}
+
+
 body {
     position: relative;
     min-width: 320px;
+    height: 100%;
+
 }
 
-.moblie-nav-bg {
+
+
+
+#notice {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+}
+
+.notice-inner {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.notice-img {
+    width: 300px;
+    height: 300px;
+    background-image: url(../images/notice.png);
+}
+
+.notice-close {
+    display: block;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #F1CB00;
+    color: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.notice-close:hover {
+    background-color: #227C39;
+    text-decoration: underline;
+}
+
+.mobile-nav-bg {
     display: none;
     position: absolute;
     top: 50px;
@@ -206,7 +263,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.moblie-nav-bg.active {
+.mobile-nav-bg.active {
     display: block;
 }
 
@@ -223,6 +280,10 @@ h2 {
     padding: 0 10px 20px 10px;
     box-sizing: border-box;
    /*  overflow: hidden; */
+}
+
+.clickHere {
+    color: #227C39;
 }
 
 
@@ -248,7 +309,7 @@ h1 > a {
     display: block; 
     width: 180px;
     height: 50px;
-    background: url(../images/logo-moblie.png) no-repeat center left;
+    background: url(../images/logo-mobile.png) no-repeat center left;
 
 }
 
@@ -259,11 +320,11 @@ h1 > a {
 #menuBtn {
     width: 50px;
     height: 50px;
-    background: url(../images/btn-menuMoblie.png) no-repeat center;
+    background: url(../images/btn-menuMobile.png) no-repeat center;
 }
 
 nav {
-    display: none;
+    /* display: none; */
     position: absolute;
     top: 50px;
     left: 0;
@@ -271,6 +332,16 @@ nav {
     z-index: 100;
     background-color: #fff;
 }
+
+
+nav#pcNav {
+    display: none;
+}
+
+nav#mobileNav {
+    display: none;
+}
+
 
 nav li a {
     display: block;
@@ -280,19 +351,23 @@ nav .main-menu {
     background-color: #fff;
 }
 
-.main-menu > li{
+.main-menu > li {
     padding: 0 10px;
     line-height: 50px;
     font-size: 18px;
     font-weight: 500;
-    border-bottom: 1px solid #ebebeb;
-    background: url(../images/ico_Down.png) no-repeat center right 10px;
+    background: url(../images/ico_Down.png) no-repeat top 22px right 10px;
     cursor: pointer;
 }
 
+#mobileNav .main-menu > li {
+    border-bottom: 1px solid #ebebeb;
+}
+
+
 .main-menu > li.active{
     color: #227C39;
-    background: url(../images/ico_Up.png) no-repeat center right 10px;
+    background: url(../images/ico_Up.png) no-repeat top 22px right 10px;
 }
 
 /* .main-menu > li > a {
@@ -373,7 +448,7 @@ nav .main-menu {
         min-width: 320px;
     }
 
-    .moblie-nav-bg {
+    .mobile-nav-bg {
         top: 100px;
     }
     
@@ -462,7 +537,7 @@ nav .main-menu {
     /* 헤더 */
     header {
         position: relative;
-        height: 100%;
+        height: 150px;
     }
 
     header > .nav-line {
@@ -484,6 +559,7 @@ nav .main-menu {
         height: 350px;
         background-color: #fff;
         z-index: 90;
+        border-bottom: 1px solid #ebebeb;
     }
 
     header > .nav-line,
@@ -526,9 +602,21 @@ nav .main-menu {
         flex-flow: nowrap;
     }
 
-    .main-menu li {
+ /*    .main-menu li {
         width: 100%;
         text-align: center;
+    } */
+
+    .main-menu > li {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        background: none;
+    }
+
+    
+    .main-menu > li.active {
+        background: none;
     }
 
     .main-menu li a {
@@ -554,7 +642,7 @@ nav .main-menu {
         z-index: 100;
     }
 
-    .main-menu > li:hover > a  {
+    .main-menu > li:hover {
         color: #227C39;
     }
 
@@ -674,6 +762,15 @@ aside,
 }
 
 @media all and (min-width: 1280px){
+
+    nav#pcNav {
+        display: block;
+    }
+    
+    nav#mobileNav {
+        display: none;
+    }
+
     .nav-line {
         display: block;
     }
