@@ -375,31 +375,5 @@
         </div>
     </footer>
     <script src="script/script.js"></script>
-    <script>
-        //공지사항 확인
-        let noticeCheck = false;
-        checkNotice();
-
-        function checkNotice()
-        {
-            //공지사항 확인을 안했을경우
-            if(!noticeCheck)
-            {
-                //스크롤 맨 위로 올림
-                window.scrollTo(0,0);
-
-                //스크롤 방지 & 공지사항 보임
-                $('html, body').css('overflow','hidden');
-                $('#notice').css('display','block');
-
-                //닫기 버튼 클릭시 공지사항 사라짐
-                $('.notice-close').click(function()
-                {
-                    $('#notice').css('display','none');
-                    $('body').css('overflow','auto');
-                })
-            }
-        }
-    </script>
 </body>
 </html>

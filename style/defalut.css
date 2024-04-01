@@ -195,15 +195,11 @@ html {
     overflow:auto;
 }
 
-
 body {
     position: relative;
     min-width: 320px;
     height: 100%;
-
 }
-
-
 
 
 #notice {
@@ -223,7 +219,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 .notice-img {
@@ -279,7 +274,6 @@ h2 {
     width: 100%;
     padding: 0 10px 20px 10px;
     box-sizing: border-box;
-   /*  overflow: hidden; */
 }
 
 .clickHere {
@@ -324,7 +318,6 @@ h1 > a {
 }
 
 nav {
-    /* display: none; */
     position: absolute;
     top: 50px;
     left: 0;
@@ -370,20 +363,6 @@ nav .main-menu {
     background: url(../images/ico_Up.png) no-repeat top 22px right 10px;
 }
 
-/* .main-menu > li > a {
-    padding: 0 10px;
-    line-height: 50px;
-    font-size: 18px;
-    font-weight: 500;
-    border-bottom: 1px solid #ebebeb;
-    background: url(../images/ico_Down.png) no-repeat center right 10px;
-}
-
-.main-menu > li.active > a {
-    color: #227C39;
-    background: url(../images/ico_Up.png) no-repeat center right 10px;
-}
- */
 .sub-menu li a {
     line-height: 45px;
     padding: 0 0 0 20px;

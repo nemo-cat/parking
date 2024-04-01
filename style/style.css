@@ -502,7 +502,7 @@
     .quick-menu li::before {
         content: "";
         display: block;
-        padding-bottom: 100%; /* 부모 요소의 너비에 대한 백분율로 높이를 설정하여 정사각형이 됩니다. */
+        padding-bottom: 100%;
     }
 
     .quick-menu li a {
@@ -607,12 +607,11 @@
 }
 
 @media all and (min-width: 1024px){
-  /* 슬라이더 */
-  .slider-list li:nth-child(1),
-  .slider-list li:nth-child(4){
-      background: url(../images/slide/slide01.png) no-repeat center left;
-  }
-
+    /* 슬라이더 */
+    .slider-list li:nth-child(1),
+    .slider-list li:nth-child(4){
+        background: url(../images/slide/slide01.png) no-repeat center left;
+    }
 
     /* 자주 찾는 서비스 */
     .quick ul {
@@ -662,7 +661,6 @@
 }
 
 @media all and (min-width: 1280px) {
-    
     /* 슬라이더 */
     .slider-list li:nth-child(1),
     .slider-list li:nth-child(4){
