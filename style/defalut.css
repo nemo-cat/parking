@@ -326,7 +326,6 @@ nav {
     background-color: #fff;
 }
 
-
 nav#pcNav {
     display: none;
 }
@@ -334,7 +333,6 @@ nav#pcNav {
 nav#mobileNav {
     display: none;
 }
-
 
 nav li a {
     display: block;
@@ -370,13 +368,14 @@ nav .main-menu {
     color: #333;
 }
 
-.sub-menu li:last-child a {
-    border-bottom: 1px solid #ebebeb;
-}
-
 .sub-menu li a:hover {
     text-decoration: underline;
-} 
+}
+
+/* 메인 컨텐츠 최소높이 */
+main {
+    min-height: calc(100vh - 50px - 240px);
+}
 
 /* 푸터 */
 .footer-top {
@@ -388,7 +387,6 @@ nav .main-menu {
 .footer-top .wrap {
     padding-bottom: 0;
 }
-
 
 .footer-top ul {
     display: flex;
@@ -472,6 +470,11 @@ nav .main-menu {
 
     nav {
         top: 100px;
+    }
+
+       /* 메인 컨텐츠 최소높이 */
+    main {
+    min-height: calc(100vh - 150px - 170px);
     }
 
     /* 푸터 */
@@ -581,11 +584,6 @@ nav .main-menu {
         flex-flow: nowrap;
     }
 
- /*    .main-menu li {
-        width: 100%;
-        text-align: center;
-    } */
-
     .main-menu > li {
         width: 100%;
         text-align: center;
@@ -593,7 +591,6 @@ nav .main-menu {
         background: none;
     }
 
-    
     .main-menu > li.active {
         background: none;
     }
@@ -640,7 +637,12 @@ nav .main-menu {
     
     .sub-menu li a:hover {
         text-decoration: underline;
-    } 
+    }
+    
+    /* 메인 컨텐츠 최소높이 */
+    main {
+        min-height: calc(100vh - 150px - 170px);
+    }
 }
 
 /* sub 페이지 공통 Style */
