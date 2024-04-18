@@ -54,17 +54,6 @@
     border: 1px solid #ebebeb;
 }
 
-/* .form-list li input:focus {
-    outline: none;
-    border: 1px solid #227C39;
-} */
-
-/* .form-list li input::placeholder {
-    font-family: "Noto Sans KR", sans-serif;
-    font-size: 14px;
-    color: #999;
-} */
-
 .radio-list {
     display: flex;
     flex-flow: row nowrap;
@@ -155,6 +144,4 @@
     .form-list li:last-child {
         padding: 0 0 40px;
     }
-
-
 }

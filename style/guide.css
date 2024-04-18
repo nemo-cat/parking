@@ -220,13 +220,7 @@ main table .width-70 {
     background-color: #f9f9f9;
 }
 
-/* tr.answer td {
-    display: none;
-} */
-
 .guide06 tbody tr.active + tr.answer td {
-    /*tr, td에 dispaly:block을 주면 레이아웃이 깨짐*/
-    /* display: table-cell; */
     padding: 20px 15px;
     background-color: #f9f9f9;
 }
