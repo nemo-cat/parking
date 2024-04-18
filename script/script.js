@@ -1,21 +1,21 @@
 $(document).ready(function(){    
-     // 최초 1회만 공지사항이 나타나게 하기위해 로컬스토리지에 값을 저장함.
-     // 로컬스토리지에서 noticeCheck값을 가져옴.
-     let getNoticeCheck = localStorage.getItem('noticeCheck');
+     // 최초 1회만 공지사항이 나타나게 하기위해 세션스토리지에 값을 저장함.
+     // 세션스토리지에서 noticeCheck값을 가져옴.
+     let getNoticeCheck = sessionStorage.getItem('noticeCheck');
      let noticeCheck = false; // 기본값을 false로 설정
      
-     // 로컬스토리지에 값이 없거나(Null), false가 저장되어있으면 다음 실행
+     // 세션스토리지에 값이 없거나(Null), false가 저장되어있으면 다음 실행
      if (!getNoticeCheck || getNoticeCheck == 'false')
      {
-         //로컬스토리지에서 noticeCheck값을 false로 저장
+         //세션스토리지에서 noticeCheck값을 false로 저장
          noticeCheck = false;
-         localStorage.setItem('noticeCheck', noticeCheck);
+         sessionStorage.setItem('noticeCheck', noticeCheck);
      }
      else
      {
         //그 외의 경우 공지사항체크를 한것으로 간주하여 noticeCheck의 값을 true로 변경
         noticeCheck = true;
-        localStorage.setItem('noticeCheck', noticeCheck);
+        sessionStorage.setItem('noticeCheck', noticeCheck);
         
      }
  
@@ -50,8 +50,8 @@ $(document).ready(function(){
 
         //공지사항을 체크한것으로 간주하고 noticeCheck값을 true로 변경해줌
         noticeCheck = true;
-        //로컬스토리지 값도 true로 변경하여 다음에 공지사항이 안나오도록 함.
-        localStorage.setItem('noticeCheck', noticeCheck);
+        //세션스토리지 값도 true로 변경하여 다음에 공지사항이 안나오도록 함.
+        sessionStorage.setItem('noticeCheck', noticeCheck);
     })
 
 
