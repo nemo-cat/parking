@@ -21,7 +21,6 @@
     padding-bottom: 50px;
 }
 
-
 /* 수정 */
 .inner-box p,
 .inner-box li {
@@ -31,7 +30,6 @@
     font-size: 16px;
     color: #666;   
 }
-
 
 .inner-box ol > li::before {
     display: none;
@@ -55,7 +53,6 @@ table {
     border-right: none;
     border-left: none;
 }
-
 
 .table-pc {
     display: none;
@@ -201,9 +198,6 @@ main table .width-70 {
     min-width: 80px;
 }
 
-
-
-
 /* ================================ */
 /* guide06 */
 
@@ -262,7 +256,6 @@ main table .width-70 {
     background-color: #227C39;
     color: #fff;
 }
-
 
 .category {
     display: flex;   
@@ -478,5 +471,4 @@ main table .width-70 {
     .inner-box.top {
         display: flex;
     }
-
 }

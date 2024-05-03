@@ -253,7 +253,7 @@ body {
     top: 50px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 50;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -290,7 +290,6 @@ header {
 .nav-bg {
     display: none;
 }
-
 
 .header-top {
     display: flex;
@@ -469,7 +468,7 @@ main {
 
     /* 메인 컨텐츠 최소높이 */
     main {
-    min-height: calc(100vh - 150px - 170px);
+        min-height: calc(100vh - 150px - 170px);
     }
 
     /* 푸터 */
@@ -526,7 +525,6 @@ main {
         z-index: 120;
     }
 
-    
     header > .nav-bg {
         position: absolute;
         top: 150px;
@@ -542,7 +540,6 @@ main {
     header > .nav-bg {
         display: none;
     }
-    
 
     .header-top {
         display: flex;
@@ -737,11 +734,9 @@ aside,
         padding: 0;
         background: none;
     }
-
 }
 
 @media all and (min-width: 1280px){
-
     nav#pcNav {
         display: block;
     }

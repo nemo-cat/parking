@@ -324,18 +324,11 @@ $(document).ready(function(){
                 });
                 
             }
-
             else if (window.innerWidth < 1280)
             {
                 // quick메뉴 가로 스크롤 해제
                 $('.quick-inner').off('mousewheel');
             }
-
-            else if ( window.innerWidth >= 1280 )
-            {
-            }
         }, 100)
     }).resize(); 
-
-     
 });
