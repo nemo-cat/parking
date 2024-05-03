@@ -258,6 +258,8 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+
+
 .mobile-nav-bg.active {
     display: block;
 }
@@ -328,6 +330,7 @@ nav#pcNav {
 
 nav#mobileNav {
     display: none;
+
 }
 
 nav li a {
