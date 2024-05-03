@@ -253,10 +253,12 @@ body {
     top: 50px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 50;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+
 
 .mobile-nav-bg.active {
     display: block;
@@ -329,6 +331,7 @@ nav#pcNav {
 
 nav#mobileNav {
     display: none;
+
 }
 
 nav li a {

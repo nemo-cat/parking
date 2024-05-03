@@ -200,8 +200,6 @@
 }
 
 
-
-
 /* 콘텐츠영역 */
 .content .tab {
     height: 300px;
@@ -426,8 +424,6 @@
     color: #227C39;
 }
 
-
-
 @media all and (min-width: 430px) {
     .banner-list li::before{
         padding-bottom: 65%;
@@ -521,8 +517,6 @@
         height: 48px;
         margin-bottom: 10px;
     }
-    
-    
 
     /* 콘텐츠 영역 */
     .tab-bottom {
@@ -576,8 +570,7 @@
     .banner-list li:nth-child(4) {
         background-image: url(../images/banner/768_banner04.png);
     }
-    
-    
+
     /* 전화번호안내 */
     .information .wrap {
         display: grid;
@@ -593,7 +586,6 @@
     .information > div > div:last-child {
         margin-bottom: 0;
     }
-    
 }
 
 @media all and (min-width: 1024px){
@@ -611,7 +603,6 @@
         column-gap: 10px;
         row-gap: 0;
     }
-    
     
     /* 콘텐츠영역 */
     .content .wrap {
